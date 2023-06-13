@@ -279,11 +279,9 @@
       </link>
     </model>
 
-    <!-- Add shapnet models below -->
-    <!-- for example: -->
+    <!-- sdf of multiple shapnet models -->
     <include>
-        <uri>model://car/car0</uri>
-        <pose>0 0 5 1.570796 0 -1.570796</pose>
+        <uri>model://scenes/new_scene</uri>
     </include>
 
 

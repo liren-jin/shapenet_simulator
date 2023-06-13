@@ -1,0 +1,11 @@
+min_x: -2
+max_x: 2
+min_y: -2
+max_y: 2
+min_z: 0
+max_z: 1
+
+# object number of each category
+car: 10
+chair: 10
+table: 10
