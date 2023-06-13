@@ -1,4 +1,4 @@
-
+SDF_TEMPLATE = """
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <world name="scene_base">
@@ -277,53 +277,54 @@
 
     <!-- object 1 -->
     <include>
-        <uri>model://models/car/car1</uri>
+        <uri>model://models/{category[0]}/{model[0]}</uri>
         <name>model1</name>
-        <pose>-1.7086537137123878 -1.993163445217764 4.050345035650032 1.570796 0 -1.531955871924887</pose>
+        <pose>{x[0]} {y[0]} {z[0]} 1.570796 0 {yaw[0]}</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>1</label>
+            <label>{label[0]}</label>
         </plugin>
     </include>
 
     <!-- object 2 -->
     <include>
-        <uri>model://models/chair/chair8</uri>
+        <uri>model://models/{category[1]}/{model[1]}</uri>
         <name>model2</name>
-        <pose>1.0592976317520342 1.0084795312359986 4.689599657745712 1.570796 0 1.0208212923878883</pose>
+        <pose>{x[1]} {y[1]} {z[1]} 1.570796 0 {yaw[1]}</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>2</label>
+            <label>{label[1]}</label>
         </plugin>
     </include>
 
     <!-- object 3 -->
     <include>
-        <uri>model://models/car/car3</uri>
+        <uri>model://models/{category[2]}/{model[2]}</uri>
         <name>model3</name>
-        <pose>0.9245255003586998 -0.33877827087660206 4.881309926595396 1.570796 0 -1.6745416621984475</pose>
+        <pose>{x[2]} {y[2]} {z[2]} 1.570796 0 {yaw[2]}</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>1</label>
+            <label>{label[2]}</label>
         </plugin>
     </include>
 
     <!-- object 4 -->
     <include>
-        <uri>model://models/chair/chair3</uri>
+        <uri>model://models/{category[3]}/{model[3]}</uri>
         <name>model4</name>
-        <pose>-0.8827916964917124 -1.535491940288582 2.456103245092832 1.570796 0 -0.5649226062254127</pose>
+        <pose>{x[3]} {y[3]} {z[3]} 1.570796 0 {yaw[3]}</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>2</label>
+            <label>{label[3]}</label>
         </plugin>
     </include>
 
     <!-- object 5 -->
     <include>
-        <uri>model://models/chair/chair0</uri>
+        <uri>model://models/{category[4]}/{model[4]}</uri>
         <name>model5</name>
-        <pose>1.1299236956132241 -0.39510813627183383 3.9980945539053576 1.570796 0 0.09983965404468398</pose>
+        <pose>{x[4]} {y[4]} {z[4]} 1.570796 0 {yaw[4]}</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>2</label>
+            <label>{label[4]}</label>
         </plugin>
     </include>
 
   </world>
 </sdf>
+"""

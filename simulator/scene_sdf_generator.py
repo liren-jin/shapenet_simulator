@@ -3,13 +3,14 @@ import yaml
 import random
 import numpy as np
 
-from sdf_template.obj5_template import SDF_TEMPLATE as sdf_5obj
-from sdf_template.obj6_template import SDF_TEMPLATE as sdf_6obj
-from sdf_template.obj7_template import SDF_TEMPLATE as sdf_7obj
+from sdf_template.scene_obj5_template import SDF_TEMPLATE as sdf_5obj
+from sdf_template.scene_obj6_template import SDF_TEMPLATE as sdf_6obj
+from sdf_template.scene_obj7_template import SDF_TEMPLATE as sdf_7obj
 
 SDF_TEMPLATE = {5: sdf_5obj, 6: sdf_6obj, 7: sdf_7obj}
-CATEGPRY = ["car", "chair", "table", "bed"]
-LABEL = {"car": 1, "chair": 2, "table": 3, "bed": 4}
+# CATEGPRY = ["car", "chair", "table", "mug"]
+CATEGPRY = ["table", "chair", "mug"]
+LABEL = {"car": 1, "chair": 2, "table": 3, "mug": 4}
 
 
 def main():
@@ -33,16 +34,18 @@ def generate_property(num, cfg):
     x_list = []
     y_list = []
     z_list = []
+    yaw_list = []
 
     for i in range(num):
         category = random.choice(CATEGPRY)
         category_list.append(category)
         obj_num = cfg[category]
-        model_list.append(f"{category}{np.random.randint(obj_num)}")
+        model_list.append(f"{category}{random.choice(range(obj_num))}")
         label_list.append(LABEL[category])
         x_list.append(np.random.uniform(cfg["min_x"], cfg["max_x"]))
         y_list.append(np.random.uniform(cfg["min_y"], cfg["max_y"]))
         z_list.append(np.random.uniform(cfg["min_z"], cfg["max_z"]))
+        yaw_list.append(np.random.uniform(-3.1415, 3.1415))
 
     scene_property = {
         "category": category_list,
@@ -51,6 +54,7 @@ def generate_property(num, cfg):
         "x": x_list,
         "y": y_list,
         "z": z_list,
+        "yaw": yaw_list,
     }
     return scene_property
 
@@ -76,7 +80,7 @@ def parse_args():
     parser.add_argument(
         "--config_path",
         type=str,
-        default="scene_cfg.yaml",
+        default="cfg/scene_cfg.yaml",
         help="scene configuration file",
     )
     args = parser.parse_args()
