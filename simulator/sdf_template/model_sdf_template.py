@@ -2,18 +2,15 @@ MODEL_SDF_TEMPLATE = """
 <?xml version="1.0" ?>
     <sdf version="1.6">
         <model name="{model_name}">
-            <inertial>
-                <mass>10</mass>
-                <inertia>
-                    <ixx>1</ixx>
-                    <ixy>0</ixy>
-                    <ixz>0</ixz>
-                    <iyy>1</iyy>
-                    <iyz>0</iyz>
-                    <izz>1</izz>
-                </inertia>
-            </inertial>
             <link name="link">
+                <inertial>
+                    <mass>{mass}</mass>
+                    <inertia>
+                        <ixx>{inertia[0]}</ixx>
+                        <iyy>{inertia[1]}</iyy>
+                        <izz>{inertia[2]}</izz>
+                    </inertia>
+                </inertial>
                 <visual name="visual">
                     <geometry>
                         <mesh>
@@ -23,11 +20,12 @@ MODEL_SDF_TEMPLATE = """
                     </geometry>
                 </visual>
                 <collision name="collision">
+                    <pose>{origin[0]} {origin[1]} {origin[2]} 0 0 0</pose>
                     <geometry>
-                        <mesh>
+                        <box>
                             <scale>{scale[0]} {scale[1]} {scale[2]}</scale>
-                            <uri>model://models/{category}/{model_name}/models/model_normalized.obj</uri>
-                        </mesh>
+                            <size>{bounding_box[0]} {bounding_box[1]} {bounding_box[2]}</size>
+                        </box>
                     </geometry>
                 </collision>
             </link>

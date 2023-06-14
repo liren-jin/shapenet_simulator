@@ -1,7 +1,7 @@
-min_x: -2
-max_x: 2
-min_y: -2
-max_y: 2
+min_x: -1.5
+max_x: 1.5
+min_y: -1.5
+max_y: 1.5
 min_z: 1
 max_z: 5
 

@@ -345,6 +345,35 @@ SDF_TEMPLATE = """
         </plugin>
     </include>
 
+    <!-- object 8 -->
+    <include>
+        <uri>model://models/{category[7]}/{model[7]}</uri>
+        <name>model8</name>
+        <pose>{x[7]} {y[7]} {z[7]} 1.570796 0 {yaw[7]}</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>{label[7]}</label>
+        </plugin>
+    </include>
+
+    <!-- object 9 -->
+    <include>
+        <uri>model://models/{category[8]}/{model[8]}</uri>
+        <name>model9</name>
+        <pose>{x[8]} {y[8]} {z[8]} 1.570796 0 {yaw[8]}</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>{label[8]}</label>
+        </plugin>
+    </include>
+
+    <!-- object 10 -->
+    <include>
+        <uri>model://models/{category[9]}/{model[9]}</uri>
+        <name>model10</name>
+        <pose>{x[9]} {y[9]} {z[9]} 1.570796 0 {yaw[9]}</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>{label[9]}</label>
+        </plugin>
+    </include>
   </world>
 </sdf>
 """

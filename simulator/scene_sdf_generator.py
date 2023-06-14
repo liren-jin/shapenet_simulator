@@ -2,14 +2,19 @@ import argparse
 import yaml
 import random
 import numpy as np
+from sdf_template import *
 
-from sdf_template.scene_obj5_template import SDF_TEMPLATE as sdf_5obj
-from sdf_template.scene_obj6_template import SDF_TEMPLATE as sdf_6obj
-from sdf_template.scene_obj7_template import SDF_TEMPLATE as sdf_7obj
-
-SDF_TEMPLATE = {5: sdf_5obj, 6: sdf_6obj, 7: sdf_7obj}
-# CATEGPRY = ["car", "chair", "table", "mug"]
-CATEGPRY = ["table", "chair", "mug"]
+MIN_NUM = 5
+MAX_NUM = 10
+SDF_TEMPLATE = {
+    5: sdf_5obj,
+    6: sdf_6obj,
+    7: sdf_7obj,
+    8: sdf_8obj,
+    9: sdf_9obj,
+    10: sdf_10obj,
+}
+CATEGPRY = ["car", "chair", "table", "mug"]
 LABEL = {"car": 1, "chair": 2, "table": 3, "mug": 4}
 
 
@@ -20,6 +25,11 @@ def main():
         scene_cfg = yaml.safe_load(cfg_file)
 
     scene_property = generate_property(args.obj_num, scene_cfg)
+    if args.random_num:
+        obj_num = np.random.randint(MIN_NUM, MAX_NUM)
+    else:
+        obj_num = args.obj_num
+
     sdf_template = SDF_TEMPLATE[args.obj_num]
     sdf_string = sdf_template.format(**scene_property)
 
@@ -62,15 +72,13 @@ def generate_property(num, cfg):
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    # mandatory arguments
     parser.add_argument(
         "--obj_num",
         "-N",
         type=int,
-        required=True,
+        default=5,
         help="define number of objects in the scene",
     )
-    # arguments with default values
     parser.add_argument(
         "--record_path",
         type=str,
@@ -83,6 +91,12 @@ def parse_args():
         default="cfg/scene_cfg.yaml",
         help="scene configuration file",
     )
+    parser.add_argument(
+        "--random_num",
+        action="store_true",
+        help="random number of object in the scene",
+    )
+
     args = parser.parse_args()
 
     return args
