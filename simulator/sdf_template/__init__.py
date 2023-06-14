@@ -1,6 +1,4 @@
-from .scene_obj5_template import SDF_TEMPLATE as sdf_5obj
-from .scene_obj6_template import SDF_TEMPLATE as sdf_6obj
-from .scene_obj7_template import SDF_TEMPLATE as sdf_7obj
-from .scene_obj8_template import SDF_TEMPLATE as sdf_8obj
-from .scene_obj9_template import SDF_TEMPLATE as sdf_9obj
-from .scene_obj10_template import SDF_TEMPLATE as sdf_10obj
+from .include_template import INCLUDE_TEMPLATE as include_template
+from .model_sdf_template import MODEL_SDF_TEMPLATE as model_sdf_template
+from .model_sdf_template import MODEL_CONFIG_TEMPLATE as model_config_template
+from .scene_sdf_template import SCENE_SDF_TEMPLATE as scene_sdf_template

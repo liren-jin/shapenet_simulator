@@ -174,7 +174,7 @@
 
     <!-- Camera instance -->
     <model name="camera">
-      <pose>6 0 2.0 0 0.0 3.14</pose>
+      <pose>2.5 0 1.0 0 0.0 3.14</pose>
       <link name="link">
         <pose>0 0 0 0 0 0</pose>
         <inertial>
@@ -188,14 +188,14 @@
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 0.1 0.1</size>
+              <size>0.05 0.1 0.1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.1 0.1 0.1</size>
+              <size>0.05 0.1 0.1</size>
             </box>
           </geometry>
         </visual>
@@ -210,7 +210,7 @@
             </image>
             <clip>
               <near>0.1</near>
-              <far>100</far>
+              <far>20</far>
             </clip>
           </camera>
           <always_on>1</always_on>
@@ -229,7 +229,7 @@
             </image>
             <clip>
               <near>0.1</near>
-              <far>100</far>
+              <far>20</far>
             </clip>
             <!-- uncomment these lines to save segmentation data -->
             <!--
@@ -274,72 +274,72 @@
     </model>
 
     <!-- Multiple shapnet models -->
-
+    
     <!-- object 1 -->
     <include>
-        <uri>model://models/table/table8</uri>
+        <uri>model://models/car/car6</uri>
         <name>model1</name>
-        <pose>-1.0526293396956148 -1.1591817938322166 3.227417129420194 1.570796 0 -2.8387965754540585</pose>
-        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>3</label>
-        </plugin>
-    </include>
-
-    <!-- object 2 -->
-    <include>
-        <uri>model://models/table/table7</uri>
-        <name>model2</name>
-        <pose>0.5639474229897012 0.7130302731867966 1.7407890001325046 1.570796 0 -1.0540508365107373</pose>
-        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>3</label>
-        </plugin>
-    </include>
-
-    <!-- object 3 -->
-    <include>
-        <uri>model://models/table/table2</uri>
-        <name>model3</name>
-        <pose>0.8873555726532425 -1.0310436894192052 2.9741702816266926 1.570796 0 -2.050280014969964</pose>
-        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>3</label>
-        </plugin>
-    </include>
-
-    <!-- object 4 -->
-    <include>
-        <uri>model://models/car/car7</uri>
-        <name>model4</name>
-        <pose>-0.671990593049549 0.2862389507772347 3.573159336323047 1.570796 0 -2.4959459293024278</pose>
+        <pose>-0.37662507638060116 -0.7114919273349118 1.6791358911079715 1.570796 0 1.6853897346626074</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
             <label>1</label>
         </plugin>
     </include>
 
-    <!-- object 5 -->
+    <!-- object 2 -->
     <include>
-        <uri>model://models/mug/mug8</uri>
-        <name>model5</name>
-        <pose>1.2985033450613486 0.7181281973514255 1.6572729797721162 1.570796 0 -1.427583870847686</pose>
+        <uri>model://models/car/car6</uri>
+        <name>model2</name>
+        <pose>-0.915843790197253 1.2613431475818144 4.332062189152373 1.570796 0 1.5512105486498107</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>4</label>
+            <label>1</label>
         </plugin>
     </include>
 
-    <!-- object 6 -->
+    <!-- object 3 -->
     <include>
-        <uri>model://models/chair/chair6</uri>
-        <name>model6</name>
-        <pose>0.2149118020097205 -0.7000141672703254 3.7011375082368465 1.570796 0 0.6599806565575808</pose>
+        <uri>model://models/car/car2</uri>
+        <name>model3</name>
+        <pose>-0.16754195288490492 -0.010007443254527626 2.281056828893358 1.570796 0 0.3989227497891674</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>1</label>
+        </plugin>
+    </include>
+
+    <!-- object 4 -->
+    <include>
+        <uri>model://models/table/table6</uri>
+        <name>model4</name>
+        <pose>0.8435414892639321 0.04220954445623715 1.348602499362829 1.570796 0 -2.3768960917231747</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>3</label>
+        </plugin>
+    </include>
+
+    <!-- object 5 -->
+    <include>
+        <uri>model://models/chair/chair1</uri>
+        <name>model5</name>
+        <pose>1.3818001939207956 -0.9497162257145703 2.955064786441017 1.570796 0 1.6381090094165107</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
             <label>2</label>
         </plugin>
     </include>
 
+    <!-- object 6 -->
+    <include>
+        <uri>model://models/mug/mug5</uri>
+        <name>model6</name>
+        <pose>-0.21237736552874287 -0.99511461177194 3.1215291737595763 1.570796 0 2.0333501288470877</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>4</label>
+        </plugin>
+    </include>
+
     <!-- object 7 -->
     <include>
-        <uri>model://models/table/table2</uri>
+        <uri>model://models/table/table5</uri>
         <name>model7</name>
-        <pose>-0.18109628865686722 0.7382043437372285 4.222496414288025 1.570796 0 0.572418446241064</pose>
+        <pose>1.3239920903197118 -0.7089443923156403 1.007923475195616 1.570796 0 -2.622614757351552</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
             <label>3</label>
         </plugin>
@@ -347,32 +347,83 @@
 
     <!-- object 8 -->
     <include>
-        <uri>model://models/table/table2</uri>
+        <uri>model://models/chair/chair3</uri>
         <name>model8</name>
-        <pose>1.2097761083738963 -0.1897659398571494 2.3742962846579836 1.570796 0 0.9479318511557051</pose>
+        <pose>0.20488692960472576 -0.1098623898170028 4.025593164444993 1.570796 0 2.851620500564708</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>3</label>
+            <label>2</label>
         </plugin>
     </include>
 
     <!-- object 9 -->
     <include>
-        <uri>model://models/car/car8</uri>
+        <uri>model://models/mug/mug6</uri>
         <name>model9</name>
-        <pose>1.2958589304795844 0.04245457419236365 2.0612081197463037 1.570796 0 -1.5561900607454688</pose>
+        <pose>1.4049743049649326 -1.1776904692946188 2.99404415400992 1.570796 0 2.71252402687224</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>1</label>
+            <label>4</label>
         </plugin>
     </include>
 
     <!-- object 10 -->
     <include>
-        <uri>model://models/mug/mug5</uri>
+        <uri>model://models/table/table8</uri>
         <name>model10</name>
-        <pose>1.030818229097826 0.13042152978446309 4.863169993995026 1.570796 0 1.74116661393832</pose>
+        <pose>0.021580074200734156 -0.7139226609275771 3.6481442513812947 1.570796 0 -3.0457573031835583</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>3</label>
+        </plugin>
+    </include>
+
+    <!-- object 11 -->
+    <include>
+        <uri>model://models/mug/mug3</uri>
+        <name>model11</name>
+        <pose>-1.4898280280581302 -0.8129705115382633 4.410940480291469 1.570796 0 0.16625229309033118</pose>
         <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
             <label>4</label>
         </plugin>
     </include>
+
+    <!-- object 12 -->
+    <include>
+        <uri>model://models/table/table8</uri>
+        <name>model12</name>
+        <pose>0.489678122291592 -0.8960216257715554 2.001883910735521 1.570796 0 2.062598339124236</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>3</label>
+        </plugin>
+    </include>
+
+    <!-- object 13 -->
+    <include>
+        <uri>model://models/mug/mug2</uri>
+        <name>model13</name>
+        <pose>-0.8646619056213182 0.4470151861341871 2.554609704028917 1.570796 0 0.19669249441747017</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>4</label>
+        </plugin>
+    </include>
+
+    <!-- object 14 -->
+    <include>
+        <uri>model://models/car/car7</uri>
+        <name>model14</name>
+        <pose>0.004454903396545085 0.33357701363689474 1.180995569323855 1.570796 0 1.5984357318116573</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>1</label>
+        </plugin>
+    </include>
+
+    <!-- object 15 -->
+    <include>
+        <uri>model://models/table/table9</uri>
+        <name>model15</name>
+        <pose>0.17685384023783857 -0.6303369318086884 1.821011082535426 1.570796 0 -1.5077751115592268</pose>
+        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+            <label>3</label>
+        </plugin>
+    </include>
+
   </world>
 </sdf>

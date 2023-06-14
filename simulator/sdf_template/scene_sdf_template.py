@@ -1,4 +1,4 @@
-SDF_TEMPLATE = """
+SCENE_SDF_TEMPLATE = """
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <world name="scene_base">
@@ -139,22 +139,22 @@ SDF_TEMPLATE = """
       <plugin filename="ImageDisplay" name="Image Display">
         <ignition-gui>
         </ignition-gui>
-        <topic>semantic/colored_map</topic>
+        <topic>{semantic_topic}/colored_map</topic>
       </plugin>
       <plugin filename="ImageDisplay" name="Image Display">
         <ignition-gui>
         </ignition-gui>
-        <topic>semantic/labels_map</topic>
+        <topic>{semantic_topic}/labels_map</topic>
       </plugin>
       <plugin filename="ImageDisplay" name="Image Display">
         <ignition-gui>
         </ignition-gui>
-        <topic>rgbd/image</topic>
+        <topic>{rgbd_topic}/image</topic>
       </plugin>
       <plugin filename="ImageDisplay" name="Image Display">
         <ignition-gui>
         </ignition-gui>
-        <topic>rgbd/depth_image</topic>
+        <topic>{rgbd_topic}/depth_image</topic>
       </plugin>
     </gui>
 
@@ -174,7 +174,7 @@ SDF_TEMPLATE = """
 
     <!-- Camera instance -->
     <model name="camera">
-      <pose>6 0 2.0 0 0.0 3.14</pose>
+      <pose>2.5 0 1.0 0 0.0 3.14</pose>
       <link name="link">
         <pose>0 0 0 0 0 0</pose>
         <inertial>
@@ -188,29 +188,29 @@ SDF_TEMPLATE = """
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.1 0.1 0.1</size>
+              <size>0.05 0.1 0.1</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.1 0.1 0.1</size>
+              <size>0.05 0.1 0.1</size>
             </box>
           </geometry>
         </visual>
 
         <sensor name="rgbd_camera" type="rgbd_camera">
-          <topic>rgbd</topic>
+          <topic>{rgbd_topic}</topic>
           <camera>
             <horizontal_fov>1.57</horizontal_fov>
             <image>
-              <width>400</width>
-              <height>300</height>
+              <width>{resolution[0]}</width>
+              <height>{resolution[1]}</height>
             </image>
             <clip>
               <near>0.1</near>
-              <far>100</far>
+              <far>20</far>
             </clip>
           </camera>
           <always_on>1</always_on>
@@ -219,17 +219,17 @@ SDF_TEMPLATE = """
         </sensor>
 
         <sensor name="semantic_segmentation_camera" type="segmentation">
-          <topic>semantic</topic>
+          <topic>{semantic_topic}</topic>
           <camera>
             <segmentation_type>semantic</segmentation_type>
             <horizontal_fov>1.57</horizontal_fov>
             <image>
-              <width>400</width>
-              <height>300</height>
+              <width>{resolution[0]}</width>
+              <height>{resolution[1]}</height>
             </image>
             <clip>
               <near>0.1</near>
-              <far>100</far>
+              <far>20</far>
             </clip>
             <!-- uncomment these lines to save segmentation data -->
             <!--
@@ -274,77 +274,7 @@ SDF_TEMPLATE = """
     </model>
 
     <!-- Multiple shapnet models -->
-
-    <!-- object 1 -->
-    <include>
-        <uri>model://models/{category[0]}/{model[0]}</uri>
-        <name>model1</name>
-        <pose>{x[0]} {y[0]} {z[0]} 1.570796 0 {yaw[0]}</pose>
-        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>{label[0]}</label>
-        </plugin>
-    </include>
-
-    <!-- object 2 -->
-    <include>
-        <uri>model://models/{category[1]}/{model[1]}</uri>
-        <name>model2</name>
-        <pose>{x[1]} {y[1]} {z[1]} 1.570796 0 {yaw[1]}</pose>
-        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>{label[1]}</label>
-        </plugin>
-    </include>
-
-    <!-- object 3 -->
-    <include>
-        <uri>model://models/{category[2]}/{model[2]}</uri>
-        <name>model3</name>
-        <pose>{x[2]} {y[2]} {z[2]} 1.570796 0 {yaw[2]}</pose>
-        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>{label[2]}</label>
-        </plugin>
-    </include>
-
-    <!-- object 4 -->
-    <include>
-        <uri>model://models/{category[3]}/{model[3]}</uri>
-        <name>model4</name>
-        <pose>{x[3]} {y[3]} {z[3]} 1.570796 0 {yaw[3]}</pose>
-        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>{label[3]}</label>
-        </plugin>
-    </include>
-
-    <!-- object 5 -->
-    <include>
-        <uri>model://models/{category[4]}/{model[4]}</uri>
-        <name>model5</name>
-        <pose>{x[4]} {y[4]} {z[4]} 1.570796 0 {yaw[4]}</pose>
-        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>{label[4]}</label>
-        </plugin>
-    </include>
-
-    <!-- object 6 -->
-    <include>
-        <uri>model://models/{category[5]}/{model[5]}</uri>
-        <name>model6</name>
-        <pose>{x[5]} {y[5]} {z[5]} 1.570796 0 {yaw[5]}</pose>
-        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>{label[5]}</label>
-        </plugin>
-    </include>
-
-    <!-- object 7 -->
-    <include>
-        <uri>model://models/{category[6]}/{model[6]}</uri>
-        <name>model7</name>
-        <pose>{x[6]} {y[6]} {z[6]} 1.570796 0 {yaw[6]}</pose>
-        <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-            <label>{label[6]}</label>
-        </plugin>
-    </include>
-
+    {model_setup}
   </world>
 </sdf>
 """

@@ -3,10 +3,7 @@ import os
 import trimesh
 import pyrender
 import argparse
-from sdf_template.model_sdf_template import (
-    MODEL_SDF_TEMPLATE,
-    MODEL_CONFIG_TEMPLATE,
-)
+from sdf_template import *
 
 AUTHOR = "Liren Jin"
 EMAIL = "ljin@uni-bonn.de"
@@ -52,11 +49,11 @@ def main():
             }
             config_property = {"model_name": model, "author": AUTHOR, "email": EMAIL}
 
-            sdf_string = MODEL_SDF_TEMPLATE.format(**model_property)
+            sdf_string = model_sdf_template.format(**model_property)
             with open(f"{model_root_dir}/model.sdf", "w") as sdf_file:
                 sdf_file.write(sdf_string)
 
-            cfg_string = MODEL_CONFIG_TEMPLATE.format(**config_property)
+            cfg_string = model_config_template.format(**config_property)
             with open(f"{model_root_dir}/model.config", "w") as cfg_file:
                 cfg_file.write(cfg_string)
 

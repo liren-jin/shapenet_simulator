@@ -1,12 +1,16 @@
+# object number of each category
+car: 10
+chair: 10
+table: 10
+mug: 10
+
+# scene property
 min_x: -1.5
 max_x: 1.5
 min_y: -1.5
 max_y: 1.5
 min_z: 1
 max_z: 5
-
-# object number of each category
-car: 10
-chair: 10
-table: 10
-mug: 10
+resolution: [400, 300]
+rgbd_topic: rgbd
+semantic_topic: semantic

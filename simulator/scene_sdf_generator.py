@@ -5,15 +5,7 @@ import numpy as np
 from sdf_template import *
 
 MIN_NUM = 5
-MAX_NUM = 10
-SDF_TEMPLATE = {
-    5: sdf_5obj,
-    6: sdf_6obj,
-    7: sdf_7obj,
-    8: sdf_8obj,
-    9: sdf_9obj,
-    10: sdf_10obj,
-}
+MAX_NUM = 15
 CATEGPRY = ["car", "chair", "table", "mug"]
 LABEL = {"car": 1, "chair": 2, "table": 3, "mug": 4}
 
@@ -24,49 +16,50 @@ def main():
     with open(args.config_path, "r") as cfg_file:
         scene_cfg = yaml.safe_load(cfg_file)
 
-    scene_property = generate_property(args.obj_num, scene_cfg)
     if args.random_num:
         obj_num = np.random.randint(MIN_NUM, MAX_NUM)
     else:
         obj_num = args.obj_num
 
-    sdf_template = SDF_TEMPLATE[args.obj_num]
-    sdf_string = sdf_template.format(**scene_property)
+    model_setup = include_models(obj_num, scene_cfg)
+    scene_property = {
+        "model_setup": model_setup,
+        "resolution": scene_cfg["resolution"],
+        "rgbd_topic": scene_cfg["rgbd_topic"],
+        "semantic_topic": scene_cfg["semantic_topic"],
+    }
+    scene_sdf_string = scene_sdf_template.format(**scene_property)
 
     with open("new_scene.sdf", "w") as sdf_file:
-        sdf_file.write(sdf_string)
+        sdf_file.write(scene_sdf_string)
 
 
-def generate_property(num, cfg):
-    category_list = []
-    model_list = []
-    label_list = []
-    x_list = []
-    y_list = []
-    z_list = []
-    yaw_list = []
+def include_models(num, cfg):
+    total_include_string = ""
 
     for i in range(num):
         category = random.choice(CATEGPRY)
-        category_list.append(category)
         obj_num = cfg[category]
-        model_list.append(f"{category}{random.choice(range(obj_num))}")
-        label_list.append(LABEL[category])
-        x_list.append(np.random.uniform(cfg["min_x"], cfg["max_x"]))
-        y_list.append(np.random.uniform(cfg["min_y"], cfg["max_y"]))
-        z_list.append(np.random.uniform(cfg["min_z"], cfg["max_z"]))
-        yaw_list.append(np.random.uniform(-3.1415, 3.1415))
+        model = f"{category}{random.choice(range(obj_num))}"
+        label = LABEL[category]
+        x = np.random.uniform(cfg["min_x"], cfg["max_x"])
+        y = np.random.uniform(cfg["min_y"], cfg["max_y"])
+        z = np.random.uniform(cfg["min_z"], cfg["max_z"])
+        yaw = np.random.uniform(-3.1415, 3.1415)
+        model_property = {
+            "category": category,
+            "model": model,
+            "label": label,
+            "x": x,
+            "y": y,
+            "z": z,
+            "yaw": yaw,
+            "index": i + 1,
+        }
+        model_include_string = include_template.format(**model_property)
+        total_include_string += model_include_string
 
-    scene_property = {
-        "category": category_list,
-        "model": model_list,
-        "label": label_list,
-        "x": x_list,
-        "y": y_list,
-        "z": z_list,
-        "yaw": yaw_list,
-    }
-    return scene_property
+    return total_include_string
 
 
 def parse_args():
