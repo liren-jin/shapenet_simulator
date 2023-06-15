@@ -114,11 +114,7 @@ catkin_package(
 
 # # Specify additional locations of header files
 # # Your package locations should be listed before other locations
-include_directories(
-    include
-    ${catkin_INCLUDE_DIRS}
-)
-
+include_directories(${catkin_INCLUDE_DIRS})
 include_directories(${CMAKE_BINARY_DIR})
 include_directories(${roscpp_INCLUDE_DIRS})
 include_directories(${geometry_msgs_INCLUDE_DIRS})
@@ -213,6 +209,6 @@ target_link_libraries(camera_controller
     ${roscpp_LIBRARIES}
     ${geometry_msgs_LIBRARIES})
 
-install(TARGETS ${exec}
-    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+# install(TARGETS ${exec}
+# RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )

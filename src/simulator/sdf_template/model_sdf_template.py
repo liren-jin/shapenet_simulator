@@ -46,7 +46,7 @@ MODEL_CONFIG_TEMPLATE = """
   </author>
 
   <description>
-    {model_name}
+    a {category} model
   </description>
 </model>
 """

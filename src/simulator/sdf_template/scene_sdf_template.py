@@ -174,7 +174,7 @@ SCENE_SDF_TEMPLATE = """
 
     <!-- Camera instance -->
     <model name="camera">
-      <pose>2.5 0 1.0 0 0.0 3.14</pose>
+      <pose>5 0 1.0 0 0.0 3.14</pose>
       <link name="link">
         <pose>0 0 0 0 0 0</pose>
         <inertial>
@@ -203,7 +203,8 @@ SCENE_SDF_TEMPLATE = """
         <sensor name="rgbd_camera" type="rgbd_camera">
           <topic>{rgbd_topic}</topic>
           <camera>
-            <horizontal_fov>1.57</horizontal_fov>
+            <horizontal_fov>{fov[0]}</horizontal_fov>
+            <vertical_fov>{fov[1]}</vertical_fov>
             <image>
               <width>{resolution[0]}</width>
               <height>{resolution[1]}</height>
@@ -222,7 +223,8 @@ SCENE_SDF_TEMPLATE = """
           <topic>{semantic_topic}</topic>
           <camera>
             <segmentation_type>semantic</segmentation_type>
-            <horizontal_fov>1.57</horizontal_fov>
+            <horizontal_fov>{fov[0]}</horizontal_fov>
+            <vertical_fov>{fov[1]}</vertical_fov>
             <image>
               <width>{resolution[0]}</width>
               <height>{resolution[1]}</height>

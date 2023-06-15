@@ -6,8 +6,8 @@ from sdf_template import *
 
 MIN_NUM = 5
 MAX_NUM = 15
-CATEGPRY = ["car", "chair", "table", "mug"]
-LABEL = {"car": 1, "chair": 2, "table": 3, "mug": 4}
+CATEGPRY = ["car", "chair", "table", "mug", "ship", "sofa"]
+LABEL = {"car": 1, "chair": 2, "table": 3, "mug": 4, "ship": 5, "sofa": 6}
 
 
 def main():
@@ -16,15 +16,19 @@ def main():
     with open(args.config_path, "r") as cfg_file:
         scene_cfg = yaml.safe_load(cfg_file)
 
+    with open(args.metadata_path, "r") as metadata_file:
+        metadata = yaml.safe_load(metadata_file)
+
     if args.random_num:
         obj_num = np.random.randint(MIN_NUM, MAX_NUM)
     else:
         obj_num = args.obj_num
 
-    model_setup = include_models(obj_num, scene_cfg)
+    model_setup = include_models(obj_num, scene_cfg, metadata)
     scene_property = {
         "model_setup": model_setup,
         "resolution": scene_cfg["resolution"],
+        "fov": scene_cfg["fov"],
         "rgbd_topic": scene_cfg["rgbd_topic"],
         "semantic_topic": scene_cfg["semantic_topic"],
     }
@@ -34,13 +38,12 @@ def main():
         sdf_file.write(scene_sdf_string)
 
 
-def include_models(num, cfg):
+def include_models(num, cfg, metadata):
     total_include_string = ""
 
     for i in range(num):
         category = random.choice(CATEGPRY)
-        obj_num = cfg[category]
-        model = f"{category}{random.choice(range(obj_num))}"
+        model = random.choice(metadata[category])
         label = LABEL[category]
         x = np.random.uniform(cfg["min_x"], cfg["max_x"])
         y = np.random.uniform(cfg["min_y"], cfg["max_y"])
@@ -83,6 +86,12 @@ def parse_args():
         type=str,
         default="cfg/scene_cfg.yaml",
         help="scene configuration file",
+    )
+    parser.add_argument(
+        "--metadata_path",
+        type=str,
+        default="models/metadata.yaml",
+        help="metadata file",
     )
     parser.add_argument(
         "--random_num",

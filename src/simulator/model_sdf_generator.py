@@ -1,5 +1,6 @@
 import numpy as np
 import os
+import yaml
 import trimesh
 import pyrender
 import argparse
@@ -12,10 +13,16 @@ EMAIL = "ljin@uni-bonn.de"
 def main():
     args = parse_args()
     root_dir = os.path.join(os.getcwd(), "models")
-    category_list = os.listdir(root_dir)
+
+    category_list = [
+        c for c in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, c))
+    ]
+    metadata = {}
+
     for category in category_list:
         category_root_dir = os.path.join(root_dir, category)
         model_list = os.listdir(category_root_dir)
+        metadata.update({category: model_list})
 
         for model in model_list:
             print(f"generating {category}/{model} sdf file")
@@ -47,7 +54,12 @@ def main():
                 "bounding_box": bbox_size,
                 "scale": scale,
             }
-            config_property = {"model_name": model, "author": AUTHOR, "email": EMAIL}
+            config_property = {
+                "category": category,
+                "model_name": model,
+                "author": AUTHOR,
+                "email": EMAIL,
+            }
 
             sdf_string = model_sdf_template.format(**model_property)
             with open(f"{model_root_dir}/model.sdf", "w") as sdf_file:
@@ -56,6 +68,10 @@ def main():
             cfg_string = model_config_template.format(**config_property)
             with open(f"{model_root_dir}/model.config", "w") as cfg_file:
                 cfg_file.write(cfg_string)
+
+    print("write metadata file")
+    with open(f"{root_dir}/metadata.yaml", "w") as metadata_file:
+        yaml.dump(metadata, metadata_file)
 
 
 def cal_inertia(bbox_size, mass):
