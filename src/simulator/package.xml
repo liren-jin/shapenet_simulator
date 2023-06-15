@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>simulator</name>
+  <version>0.1.0</version>
+  <description>shapenet simulator</description>
+  <license>Apache 2.0</license>
+  <maintainer email="ljin@uni-bonn.de">Liren Jin</maintainer>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

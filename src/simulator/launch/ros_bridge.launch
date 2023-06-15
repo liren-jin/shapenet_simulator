@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="ros_topics" default="/rgbd/image@sensor_msgs/Image@ignition.msgs.Image 
+                                /rgbd/depth_image@sensor_msgs/Image@ignition.msgs.Image 
+                                /semantic/labels_map@sensor_msgs/Image@ignition.msgs.Image 
+                                rgbd/camera_info@sensor_msgs/CameraInfo@ignition.msgs.CameraInfo"/>
+  <node
+    pkg="ros_ign_bridge"
+    type="parameter_bridge"
+    name="parameter_bridge_"
+    output="screen"
+    required="true"
+    args="$(arg ros_topics)">
+  </node>
+
+  <node
+    pkg="camera_controller"
+    type="camera_controller"
+    name="camera_controller_"
+    required="true"
+    output="screen">
+  </node>
+</launch>
