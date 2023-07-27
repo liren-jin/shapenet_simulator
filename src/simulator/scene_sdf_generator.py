@@ -6,7 +6,8 @@ from sdf_template import *
 
 MIN_NUM = 5
 MAX_NUM = 15
-CATEGPRY = ["car", "chair", "table", "mug", "ship", "sofa"]
+# CATEGPRY = ["car", "chair", "table", "mug", "ship", "sofa"]
+CATEGPRY = ["car", "chair", "table", "sofa"]
 LABEL = {"car": 1, "chair": 2, "table": 3, "mug": 4, "ship": 5, "sofa": 6}
 
 

@@ -4,8 +4,8 @@ max_x: 1.2
 min_y: -1.2
 max_y: 1.2
 min_z: 1
-max_z: 5
-resolution: [400, 400]
-fov: [1, 1]
+max_z: 3
+resolution: [600, 600]
+fov: [1.57, 1.57]
 rgbd_topic: rgbd
 semantic_topic: semantic

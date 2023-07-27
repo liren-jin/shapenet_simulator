@@ -161,8 +161,8 @@ SCENE_SDF_TEMPLATE = """
     <light type="directional" name="sun">
       <cast_shadows>false</cast_shadows>
       <pose>0 0 20 0 0 0</pose>
-      <diffuse>0.8 0.8 0.8 1</diffuse>
-      <specular>0.2 0.2 0.2 1</specular>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
       <attenuation>
         <range>1000</range>
         <constant>0.9</constant>
@@ -174,7 +174,7 @@ SCENE_SDF_TEMPLATE = """
 
     <!-- Camera instance -->
     <model name="camera">
-      <pose>5 0 1.0 0 0.0 3.14</pose>
+      <pose>2 0 1.0 0 0.0 3.14</pose>
       <link name="link">
         <pose>0 0 0 0 0 0</pose>
         <inertial>
@@ -274,6 +274,13 @@ SCENE_SDF_TEMPLATE = """
         </visual>
       </link>
     </model>
+
+    <!--model name='ground'>
+      <include>
+        <uri>model://models/ground</uri>
+      </include>
+      <static>true</static>
+    </model-->
 
     <!-- Multiple shapnet models -->
     {model_setup}

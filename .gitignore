@@ -2,3 +2,4 @@ build/
 devel/
 !**/models
 **/models/*
+new_scene.sdf
