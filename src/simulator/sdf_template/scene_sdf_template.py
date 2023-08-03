@@ -275,13 +275,6 @@ SCENE_SDF_TEMPLATE = """
       </link>
     </model>
 
-    <!--model name='ground'>
-      <include>
-        <uri>model://models/ground</uri>
-      </include>
-      <static>true</static>
-    </model-->
-
     <!-- Multiple shapnet models -->
     {model_setup}
   </world>
