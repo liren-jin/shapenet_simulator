@@ -10,7 +10,22 @@ cd shapenet_simulator
 docker build . -t shapenet-simulator:v0
 ```
 
+## Generate a Scene
+The simulator supports generation of random scenes.
+
+For the first time or when new models are added into the repo, we generate individual model sdf:
+```commandline
+cd src/simulation
+python3 model_sdf_generator.py
+```
+To generate a new scene:
+```commandline
+python3 scene_sdf_generator.py -N <number of objects>
+```
+A file called new_scene.sdf should now be added into the simulator folder.
+
 ## Basic Usage
+After you create a scene, you can run:
 ```commanline
 make 
 make simulation
@@ -28,13 +43,24 @@ published topics:
 - /semantic/labels_map sensor_msgs/Image
 
 
-## Different Scenes
-The simulator supports generation of random scenes. To do so, open a new terminal,
-```commandline
-cd src/simulation
-python3 scene_sdf_generator.py -N <number of objects>
-```
-you can run "make simulation" again to see the new scene imported in the simulator.
 
 ## Models Pre-Processing
-coming soon
+Shapenet model can be download from [here](https://shapenet.org/download/shapenetcore).
+Select your models and copy them to src/simulator/models folder. Catogrize the models based on their semantic class. An example would be :
+```
+src/simulator/models
+|
+|___ car
+|    |__ model1
+|    |__ model2
+|    |__ ...
+|
+|__ ship
+|   |__ model1
+|   |__ model2
+|   |__ ...
+|
+|__ ...
+
+
+```
