@@ -27,6 +27,7 @@ A file called new_scene.sdf should now be added into the simulator folder.
 ## Basic Usage
 After you create a scene, you can run:
 ```commanline
+xhost +local:docker
 make 
 make simulation
 ```
