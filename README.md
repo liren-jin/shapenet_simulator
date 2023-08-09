@@ -1,6 +1,8 @@
 # Shapenet Simulator: A Simulator using Multiple Shapenet Model Objects with Semantic Rendering
 Liren Jin, University of Bonn
 
+An example of the simulator:
+![Framework](doc/example.png)
 ## Environment Setup
 For using the simulator, you need to install [docker](https://docs.docker.com/engine/install/) and [nvidia run time](https://nvidia.github.io/nvidia-container-runtime/) support.
 
