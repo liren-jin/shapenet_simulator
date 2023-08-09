@@ -1,2 +1,3 @@
 **/models
-**/new_scene.sdf
+**/scene_base.sdf
+**/simulation.launch

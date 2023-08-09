@@ -32,14 +32,15 @@ python3 launch_file_generator.py -N <number of objects>
 
 
 ## Basic Usage
-After you create a scene, you can run:
+After you create a new simulation, you can run:
 ```commanline
 xhost +local:docker
 make 
 make simulation
 ```
 
-If everything goes well, you should see an Ignition-Gazebo user interface, press the start button to start the simulation. 
+If everything goes well, you should see an Ignition-Gazebo user interface, press the start button to start the simulation.
+It may take a few seconds untill all objects stay static.
 
 required topic:
 - /set_camera_pose geometry_msgs/Pose

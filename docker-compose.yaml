@@ -18,7 +18,8 @@ services:
     privileged: true
     volumes:
       - ./src/simulator/models/:/shapenet_simulator/src/simulator/models/:rw
-      - ./src/simulator/new_scene.sdf:/shapenet_simulator/src/simulator/new_scene.sdf:rw
+      - ./src/simulator/scene_base.sdf:/shapenet_simulator/src/simulator/scene_base.sdf:rw
+      - ./src/simulator/launch/simulation.launch:/shapenet_simulator/src/simulator/launch/simulation.launch:rw
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
     environment:

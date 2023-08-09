@@ -1,6 +1,5 @@
 build/
 devel/
-new_scene.sdf
 **/__pycache__
 .catkin_tools
 logs/
