@@ -18,11 +18,18 @@ For the first time or when new models are added into the repo, we generate indiv
 cd src/simulation
 python3 model_sdf_generator.py
 ```
-To generate a new scene:
+
+We also need a scene sdf file describing all scene properties:
 ```commandline
-python3 scene_sdf_generator.py -N <number of objects>
+python3 scene_sdf_generator.py
 ```
-A file called new_scene.sdf should now be added into the simulator folder.
+For customizing scene properties, using simulator/cfg/scene_cfg.yaml.
+
+To generate a new launch file to launch scene and models:
+```commandline
+python3 launch_file_generator.py -N <number of objects>
+```
+
 
 ## Basic Usage
 After you create a scene, you can run:
@@ -47,7 +54,7 @@ published topics:
 
 ## Models Pre-Processing
 Shapenet model can be download from [here](https://shapenet.org/download/shapenetcore).
-Select your models and copy them to src/simulator/models folder. Catogrize the models based on their semantic class. An example would be :
+Select your models and copy them to src/simulator/models folder. Catogrize the models based on their semantic class (allowed category names are shown in constants.py file). An example would be :
 ```
 src/simulator/models
 |
