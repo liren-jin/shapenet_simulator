@@ -15,7 +15,7 @@ MODEL_SDF_TEMPLATE = """
                     <geometry>
                         <mesh>
                             <scale>{scale[0]} {scale[1]} {scale[2]}</scale>
-                            <uri>model://models/{category}/{model_name}/models/model_normalized.obj</uri>
+                            <uri>models/model_normalized.obj</uri>
                         </mesh>
                     </geometry>
                 </visual>
@@ -23,11 +23,14 @@ MODEL_SDF_TEMPLATE = """
                     <geometry>
                         <mesh>
                             <scale>{scale[0]} {scale[1]} {scale[2]}</scale>
-                            <uri>model://models/{category}/{model_name}/collision.dae</uri>
+                            <uri>collision.dae</uri>
                         </mesh>
                     </geometry>
                 </collision>
             </link>
+            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+                <label>{label}</label>
+            </plugin>
         </model>
     </sdf>
 """
@@ -49,7 +52,7 @@ MODEL_SDF_TEMPLATE_SIMPLE = """
                     <geometry>
                         <mesh>
                             <scale>{scale[0]} {scale[1]} {scale[2]}</scale>
-                            <uri>model://models/{category}/{model_name}/models/model_normalized.obj</uri>
+                            <uri>/models/model_normalized.obj</uri>
                         </mesh>
                     </geometry>
                 </visual>
@@ -63,6 +66,9 @@ MODEL_SDF_TEMPLATE_SIMPLE = """
                     </geometry>
                 </collision>
             </link>
+            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
+                <label>{label}</label>
+            </plugin>
         </model>
     </sdf>
 """

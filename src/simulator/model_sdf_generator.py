@@ -4,7 +4,8 @@ import yaml
 import trimesh
 import pyrender
 import argparse
-from sdf_template import *
+from template import *
+from constants import *
 
 AUTHOR = "Liren Jin"
 EMAIL = "ljin@uni-bonn.de"
@@ -14,9 +15,11 @@ def main():
     args = parse_args()
     root_dir = os.path.join(os.getcwd(), "models")
 
-    category_list = [
-        c for c in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, c))
-    ]
+    # category_list = [
+    #     c for c in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, c))
+    # ]
+    category_list = CATEGPRY
+    print("available categories:", category_list)
     metadata = {}
 
     for category in category_list:
@@ -31,7 +34,6 @@ def main():
             mesh_file_path = os.path.join(
                 model_root_dir, "models", "model_normalized.obj"
             )
-            # print(mesh_file_path)
             mesh = trimesh.load(mesh_file_path, force="mesh", process=False)
             collision_mesh = trimesh.convex.convex_hull(mesh)
             _ = collision_mesh.export(f"{model_root_dir}/collision.dae")
@@ -53,7 +55,7 @@ def main():
                 scale = args.fix_model_scale * np.array([1.0, 1.0, 1.0])
 
             model_property = {
-                "category": category,
+                "label": LABEL[category],
                 "model_name": model,
                 "origin": origin,
                 "mass": mass,
