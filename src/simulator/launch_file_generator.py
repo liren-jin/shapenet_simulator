@@ -39,8 +39,9 @@ def include_nodes(num, cfg, metadata):
         category = random.choice(CATEGPRY)
         model = random.choice(metadata[category])
         label = LABEL[category]
-        x = np.random.uniform(cfg["min_x"], cfg["max_x"])
-        y = np.random.uniform(cfg["min_y"], cfg["max_y"])
+        x, y = sample_position(cfg["radius"])
+        # x = np.random.uniform(cfg["min_x"], cfg["max_x"])
+        # y = np.random.uniform(cfg["min_y"], cfg["max_y"])
         yaw = np.random.uniform(-3.1415, 3.1415)
         roll = np.random.uniform(-0.5, 0.5)
         pitch = np.random.uniform(-0.5, 0.5)
@@ -60,6 +61,14 @@ def include_nodes(num, cfg, metadata):
         total_include_string += model_include_string
 
     return total_include_string
+
+
+def sample_position(radius):
+    r = np.random.uniform(0, radius)
+    theta = np.random.uniform(-3.1415, 3.1415)
+    x = r * np.cos(theta)
+    y = r * np.sin(theta)
+    return x, y
 
 
 def parse_args():

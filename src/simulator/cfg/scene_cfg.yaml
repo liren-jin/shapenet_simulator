@@ -1,8 +1,5 @@
 # scene property
-min_x: -1.0
-max_x: 1.0
-min_y: -1.0
-max_y: 1.0
+radius: 1.0 # spwan objects whitin this radius
 update_rate: 10
 resolution: [480, 320]
 fov: [1.57, 1.05]

@@ -1,4 +1,4 @@
-# Shapenet Simulator: A Simulator with Multiple Shapenet Model Objects
+# Shapenet Simulator: A Simulator using Multiple Shapenet Model Objects with Semantic Rendering
 Liren Jin, University of Bonn
 
 ## Environment Setup
@@ -40,7 +40,7 @@ make simulation
 ```
 
 If everything goes well, you should see an Ignition-Gazebo user interface, press the start button to start the simulation.
-It may take a few seconds untill all objects stay static.
+It may take a few seconds untill all objects stay static. You can also stop the simulation, which will not affect the rendering and camera movement. 
 
 required topic:
 - /set_camera_pose geometry_msgs/Pose
