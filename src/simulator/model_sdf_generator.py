@@ -33,11 +33,18 @@ def main():
             )
             # print(mesh_file_path)
             mesh = trimesh.load(mesh_file_path, force="mesh", process=False)
-            mesh = pyrender.Mesh.from_trimesh(mesh)
+            collision_mesh = trimesh.convex.convex_hull(mesh)
+            _ = collision_mesh.export(f"{model_root_dir}/collision.dae")
+            _ = collision_mesh.export(
+                f"{model_root_dir}/collision.obj"
+            )  # for visualization in meshlab
+
+            mesh = pyrender.Mesh.from_trimesh(collision_mesh)
             bbox_size = mesh.extents
             origin = mesh.centroid
-            mass = 1.0  # default mass of all models
+            mass = 100.0  # default mass of all models
             inertia = cal_inertia(bbox_size, mass)
+            inertia = np.abs(inertia)
 
             if args.random_scale:
                 scale_factor = np.random.uniform(1, 2)
@@ -61,7 +68,12 @@ def main():
                 "email": EMAIL,
             }
 
-            sdf_string = model_sdf_template.format(**model_property)
+            if args.simple_collision:
+                template = model_sdf_template_simple
+            else:
+                template = model_sdf_template
+
+            sdf_string = template.format(**model_property)
             with open(f"{model_root_dir}/model.sdf", "w") as sdf_file:
                 sdf_file.write(sdf_string)
 
@@ -88,8 +100,8 @@ def parse_args():
     # arguments with default values
     parser.add_argument(
         "--fix_model_scale",
-        type=int,
-        default=1,
+        type=float,
+        default=0.8,
         help="scale of the model",
     )
 
@@ -97,6 +109,12 @@ def parse_args():
         "--random_scale",
         action="store_true",
         help="use random scale of the model",
+    )
+
+    parser.add_argument(
+        "--simple_collision",
+        action="store_true",
+        help="use bbox as collision geometry to speed up simulation",
     )
     args = parser.parse_args()
 

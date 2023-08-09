@@ -215,7 +215,7 @@ SCENE_SDF_TEMPLATE = """
             </clip>
           </camera>
           <always_on>1</always_on>
-          <update_rate>30</update_rate>
+          <update_rate>10</update_rate>
           <visualize>true</visualize>
         </sensor>
 
@@ -241,7 +241,7 @@ SCENE_SDF_TEMPLATE = """
             -->
           </camera>
           <always_on>1</always_on>
-          <update_rate>30</update_rate>
+          <update_rate>10</update_rate>
           <visualize>true</visualize>
         </sensor>
       </link>

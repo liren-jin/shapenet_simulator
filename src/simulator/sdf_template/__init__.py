@@ -1,4 +1,5 @@
 from .include_template import INCLUDE_TEMPLATE as include_template
 from .model_sdf_template import MODEL_SDF_TEMPLATE as model_sdf_template
+from .model_sdf_template import MODEL_SDF_TEMPLATE_SIMPLE as model_sdf_template_simple
 from .model_sdf_template import MODEL_CONFIG_TEMPLATE as model_config_template
 from .scene_sdf_template import SCENE_SDF_TEMPLATE as scene_sdf_template

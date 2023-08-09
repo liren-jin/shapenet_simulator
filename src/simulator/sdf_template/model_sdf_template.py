@@ -20,6 +20,40 @@ MODEL_SDF_TEMPLATE = """
                     </geometry>
                 </visual>
                 <collision name="collision">
+                    <geometry>
+                        <mesh>
+                            <scale>{scale[0]} {scale[1]} {scale[2]}</scale>
+                            <uri>model://models/{category}/{model_name}/collision.dae</uri>
+                        </mesh>
+                    </geometry>
+                </collision>
+            </link>
+        </model>
+    </sdf>
+"""
+
+MODEL_SDF_TEMPLATE_SIMPLE = """
+<?xml version="1.0" ?>
+    <sdf version="1.6">
+        <model name="{model_name}">
+            <link name="link">
+                <inertial>
+                    <mass>{mass}</mass>
+                    <inertia>
+                        <ixx>{inertia[0]}</ixx>
+                        <iyy>{inertia[1]}</iyy>
+                        <izz>{inertia[2]}</izz>
+                    </inertia>
+                </inertial>
+                <visual name="visual">
+                    <geometry>
+                        <mesh>
+                            <scale>{scale[0]} {scale[1]} {scale[2]}</scale>
+                            <uri>model://models/{category}/{model_name}/models/model_normalized.obj</uri>
+                        </mesh>
+                    </geometry>
+                </visual>
+                <collision name="collision">
                     <pose>{origin[0]} {origin[1]} {origin[2]} 0 0 0</pose>
                     <geometry>
                         <box>
@@ -32,7 +66,6 @@ MODEL_SDF_TEMPLATE = """
         </model>
     </sdf>
 """
-
 MODEL_CONFIG_TEMPLATE = """
 <?xml version="1.0"?>
 <model>
