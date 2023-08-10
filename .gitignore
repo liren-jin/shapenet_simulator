@@ -3,3 +3,6 @@ devel/
 **/__pycache__
 .catkin_tools
 logs/
+*.png
+*.npy
+**/records
