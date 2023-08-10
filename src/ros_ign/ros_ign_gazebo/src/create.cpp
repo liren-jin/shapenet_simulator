@@ -19,6 +19,8 @@
 #include <ignition/msgs/entity_factory.pb.h>
 #include <ignition/msgs/Utility.hh>
 #include <ignition/transport/Node.hh>
+#include <chrono>
+#include <thread>
 #include <ros/ros.h>
 
 #include <sstream>
@@ -48,7 +50,8 @@ int main(int _argc, char **_argv)
                        [-name NAME] [-X X] [-Y Y] [-Z Z] [-Roll ROLL]
                        [-Pitch PITCH] [-Yaw YAW])");
     gflags::ParseCommandLineFlags(&_argc, &_argv, true);
-
+    int sleep_millisecs = (int)FLAGS_order * 2000;
+    std::this_thread::sleep_for(std::chrono::milliseconds(sleep_millisecs));
     ros::init(_argc, _argv, "ign_create");
     ros::NodeHandle nh;
 
@@ -119,7 +122,6 @@ int main(int _argc, char **_argv)
     ignition::msgs::Boolean rep;
     bool result;
     unsigned int timeout = 5000;
-    ros::Duration(FLAGS_order).sleep();
     bool executed = node.Request(service, req, timeout, rep, result);
 
     if (executed)

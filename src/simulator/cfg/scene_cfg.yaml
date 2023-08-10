@@ -1,7 +1,7 @@
 # scene property
 radius: 1.0 # spwan objects whitin this radius
-update_rate: 10
+update_rate: 20
 resolution: [480, 320]
-fov: [1.57, 1.05]
+fov: [1.2, 0.8]
 rgbd_topic: rgbd
 semantic_topic: semantic

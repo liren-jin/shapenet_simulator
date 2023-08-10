@@ -144,11 +144,6 @@
       <plugin filename="ImageDisplay" name="Image Display">
         <ignition-gui>
         </ignition-gui>
-        <topic>semantic/labels_map</topic>
-      </plugin>
-      <plugin filename="ImageDisplay" name="Image Display">
-        <ignition-gui>
-        </ignition-gui>
         <topic>rgbd/image</topic>
       </plugin>
       <plugin filename="ImageDisplay" name="Image Display">
@@ -174,15 +169,16 @@
 
     <!-- Camera instance -->
     <model name="camera">
+      <static>true</static>
       <pose>2 0 1.0 0 0.0 3.14</pose>
       <link name="link">
         <pose>0 0 0 0 0 0</pose>
         <inertial>
-          <mass>0.0</mass>
+          <mass>1.0</mass>
           <inertia>
-            <ixx>0.000</ixx>
-            <iyy>0.000</iyy>
-            <izz>0.000</izz>
+            <ixx>1.000</ixx>
+            <iyy>1.000</iyy>
+            <izz>1.000</izz>
           </inertia>
         </inertial>
         <collision name="collision">
@@ -203,8 +199,8 @@
         <sensor name="rgbd_camera" type="rgbd_camera">
           <topic>rgbd</topic>
           <camera>
-            <horizontal_fov>1.57</horizontal_fov>
-            <vertical_fov>1.05</vertical_fov>
+            <horizontal_fov>1.2</horizontal_fov>
+            <vertical_fov>0.8</vertical_fov>
             <image>
               <width>480</width>
               <height>320</height>
@@ -215,7 +211,7 @@
             </clip>
           </camera>
           <always_on>1</always_on>
-          <update_rate>10</update_rate>
+          <update_rate>20</update_rate>
           <visualize>true</visualize>
         </sensor>
 
@@ -223,8 +219,8 @@
           <topic>semantic</topic>
           <camera>
             <segmentation_type>semantic</segmentation_type>
-            <horizontal_fov>1.57</horizontal_fov>
-            <vertical_fov>1.05</vertical_fov>
+            <horizontal_fov>1.2</horizontal_fov>
+            <vertical_fov>0.8</vertical_fov>
             <image>
               <width>480</width>
               <height>320</height>
@@ -241,7 +237,7 @@
             -->
           </camera>
           <always_on>1</always_on>
-          <update_rate>10</update_rate>
+          <update_rate>20</update_rate>
           <visualize>true</visualize>
         </sensor>
       </link>
@@ -274,5 +270,66 @@
         </visual>
       </link>
     </model>
+
+    <model name="wall1">
+      <static>true</static>
+      <pose>0 -1.2 0.1 0 0.0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 1 0</normal>
+              <size>2.4 0.2</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall2">
+      <static>true</static>
+      <pose>0 1.2 0.1 0 0.0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 -1 0</normal>
+              <size>2.4 0.2</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall3">
+      <static>true</static>
+      <pose>1.2 0 0.1 0 0.0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>-1 0 0</normal>
+              <size>0.2 2.4 </size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall4">
+      <static>true</static>
+      <pose>-1.2 0 0.1 0 0.0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>1 0 0</normal>
+              <size>0.2 2.4</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+    <gravity>0.0 0.0 -30.0</gravity>
   </world>
 </sdf>

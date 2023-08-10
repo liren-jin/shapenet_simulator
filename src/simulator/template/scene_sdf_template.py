@@ -144,11 +144,6 @@ SCENE_SDF_TEMPLATE = """
       <plugin filename="ImageDisplay" name="Image Display">
         <ignition-gui>
         </ignition-gui>
-        <topic>{semantic_topic}/labels_map</topic>
-      </plugin>
-      <plugin filename="ImageDisplay" name="Image Display">
-        <ignition-gui>
-        </ignition-gui>
         <topic>{rgbd_topic}/image</topic>
       </plugin>
       <plugin filename="ImageDisplay" name="Image Display">
@@ -174,15 +169,16 @@ SCENE_SDF_TEMPLATE = """
 
     <!-- Camera instance -->
     <model name="camera">
+      <static>true</static>
       <pose>2 0 1.0 0 0.0 3.14</pose>
       <link name="link">
         <pose>0 0 0 0 0 0</pose>
         <inertial>
-          <mass>0.0</mass>
+          <mass>1.0</mass>
           <inertia>
-            <ixx>0.000</ixx>
-            <iyy>0.000</iyy>
-            <izz>0.000</izz>
+            <ixx>1.000</ixx>
+            <iyy>1.000</iyy>
+            <izz>1.000</izz>
           </inertia>
         </inertial>
         <collision name="collision">
@@ -274,6 +270,67 @@ SCENE_SDF_TEMPLATE = """
         </visual>
       </link>
     </model>
+
+    <model name="wall1">
+      <static>true</static>
+      <pose>0 -1.2 0.1 0 0.0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 1 0</normal>
+              <size>2.4 0.2</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall2">
+      <static>true</static>
+      <pose>0 1.2 0.1 0 0.0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 -1 0</normal>
+              <size>2.4 0.2</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall3">
+      <static>true</static>
+      <pose>1.2 0 0.1 0 0.0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>-1 0 0</normal>
+              <size>0.2 2.4 </size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall4">
+      <static>true</static>
+      <pose>-1.2 0 0.1 0 0.0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>1 0 0</normal>
+              <size>0.2 2.4</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+    <gravity>0.0 0.0 -30.0</gravity>
   </world>
 </sdf>
 """
