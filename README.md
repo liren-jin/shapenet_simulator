@@ -4,7 +4,7 @@ Liren Jin, University of Bonn
 An example of the simulator:
 ![Framework](doc/example.png)
 ## Environmental Setup
-For using the simulator, you need to install [docker](https://docs.docker.com/engine/install/) and [nvidia run time](https://nvidia.github.io/nvidia-container-runtime/) support.
+For using the simulator, you need to install [docker](https://docs.docker.com/engine/install/) and [nvidia run time](https://github.com/NVIDIA/nvidia-container-runtime) support.
 
 ```commandline
 git clone git@github.com:liren-jin/shapenet_simulator.git
@@ -12,8 +12,7 @@ cd shapenet_simulator
 docker build . -t shapenet-simulator:v0
 ```
 ## Generate a Scene
-The simulator supports generation of random scenes.
-We use python to generate files that can be used for the simulator, e.g., launch and sdf files, use requirement.txt to install necessary python packages. 
+The simulator supports generation of random scenes. We use python to generate files that can be used for the simulator, e.g., launch and sdf files, use requirement.txt to install necessary python packages. 
 
 (optional) For the first time or when new models are added into the repo, we generate individual model sdf:
 ```commandline
@@ -29,8 +28,9 @@ For customizing scene properties, using simulator/cfg/scene_cfg.yaml.
 
 To generate a new launch file to launch scene and models:
 ```commandline
-python3 launch_file_generator.py -N <number of objects>
+python3 launch_file_generator.py -N <number of objects> -S <seed number>
 ```
+Random seed -S together with object number -N specify a scene configuration. If you do not want to reproduce a scene configuratin, leave out -S flag. 
 
 
 ## Basic Usage
@@ -41,8 +41,7 @@ make
 make simulation
 ```
 
-If everything goes well, you should see an Ignition-Gazebo user interface, press the start button to start the simulation.
-It may take a few seconds untill all objects stay static. You can also stop the simulation, which will not affect the rendering and camera movement. 
+If everything goes well, you should see an Ignition-Gazebo user interface. It may take a few seconds untill all objects stay static (In case it crushes, just restart the simulation, it always helps). 
 
 required topic:
 - /set_camera_pose [geometry_msgs/Pose]
@@ -73,5 +72,12 @@ src/simulator/models
 |
 |__ ...
 
-
 ```
+
+## Data Generation
+Our simulator can be used to generate data set for semantic segmentation training:
+```commandline
+cd src/data_generator
+python3 main.py -P <path pattern> -BG <budget number>
+```
+Currently, coverage, random and uniform path pattern are supported.

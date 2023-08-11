@@ -12,6 +12,10 @@ MAX_NUM = 15
 def main():
     args = parse_args()
 
+    if args.random_seed != 0:
+        random.seed(args.random_seed)
+        np.random.seed(args.random_seed)
+
     with open(args.config_path, "r") as cfg_file:
         scene_cfg = yaml.safe_load(cfg_file)
 
@@ -78,6 +82,13 @@ def parse_args():
         type=int,
         default=5,
         help="define number of objects in the scene",
+    )
+    parser.add_argument(
+        "--random_seed",
+        "-S",
+        type=int,
+        default=0,
+        help="use random seed to have reproduction ability of a scene",
     )
     parser.add_argument(
         "--record_path",
