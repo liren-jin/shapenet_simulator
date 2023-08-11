@@ -2,5 +2,5 @@ from .model_sdf_template import MODEL_SDF_TEMPLATE as model_sdf_template
 from .model_sdf_template import MODEL_SDF_TEMPLATE_SIMPLE as model_sdf_template_simple
 from .model_sdf_template import MODEL_CONFIG_TEMPLATE as model_config_template
 from .scene_sdf_template import SCENE_SDF_TEMPLATE as scene_sdf_template
-from .launch_file_template import LAUNCH_FILE_TEMPLATE as launch_file_template
-from .node_template import NODE_TEMPLATE as node_template
+from .launch_template import NODE_TEMPLATE as node_template
+from .launch_template import LAUNCH_FILE_TEMPLATE as launch_file_template

@@ -40,11 +40,9 @@ def include_nodes(num, cfg, metadata):
         model = random.choice(metadata[category])
         label = LABEL[category]
         x, y = sample_position(cfg["radius"])
-        # x = np.random.uniform(cfg["min_x"], cfg["max_x"])
-        # y = np.random.uniform(cfg["min_y"], cfg["max_y"])
         yaw = np.random.uniform(-3.1415, 3.1415)
-        roll = np.random.uniform(-0.5, 0.5)
-        pitch = np.random.uniform(-0.5, 0.5)
+        roll = 1.570756
+        pitch = np.random.uniform(-0.2, 0.2)
         model_property = {
             "category": category,
             "model": model,

@@ -19,8 +19,8 @@ RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb
 
 # Build simulator
 SHELL ["/bin/bash", "-c"]
-COPY src/ src/
 RUN apt-get install -y ros-noetic-ros-ign qt5-default
+COPY src/ src/
 RUN . /opt/ros/noetic/setup.bash &&\
     catkin build 
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc &&\
