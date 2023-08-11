@@ -55,7 +55,7 @@ def main():
                 scale = args.fix_model_scale * np.array([1.0, 1.0, 1.0])
 
             if category == "airplane":
-                scale = 1.2 * scale
+                scale = 1.5 * scale
 
             model_property = {
                 "label": LABEL[category],

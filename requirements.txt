@@ -2,3 +2,4 @@ trimesh
 pyrender
 pyyaml
 numpy
+pycollada

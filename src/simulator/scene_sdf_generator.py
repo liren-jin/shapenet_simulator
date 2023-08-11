@@ -9,13 +9,14 @@ def main():
 
     with open(args.config_path, "r") as cfg_file:
         scene_cfg = yaml.safe_load(cfg_file)
-
     scene_property = {
         "resolution": scene_cfg["resolution"],
         "update_rate": scene_cfg["update_rate"],
         "fov": scene_cfg["fov"],
         "rgbd_topic": scene_cfg["rgbd_topic"],
         "semantic_topic": scene_cfg["semantic_topic"],
+        "background_color": scene_cfg["background_color"],
+        "ambient_light": scene_cfg["ambient_light"],
     }
     scene_sdf_string = scene_sdf_template.format(**scene_property)
 

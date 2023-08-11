@@ -5,3 +5,5 @@ resolution: [480, 320]
 fov: [1.2, 0.8]
 rgbd_topic: rgbd
 semantic_topic: semantic
+background_color: [0.9, 0.9, 0.9]
+ambient_light: [0.4, 0.4, 0.4]

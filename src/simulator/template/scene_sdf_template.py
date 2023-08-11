@@ -20,6 +20,26 @@ SCENE_SDF_TEMPLATE = """
       <render_engine>ogre2</render_engine>
     </plugin>
 
+    <physics type='ode'>
+      <max_step_size>0.002</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <ode>
+        <solver>
+            <type>quick</type>
+            <iters>20</iters>
+        </solver>
+        <constraints>
+          <contact_max_correcting_vel>0</contact_max_correcting_vel>
+        </constraints>
+      </ode>
+    </physics>
+
+    <scene>
+      <ambient>{ambient_light[0]} {ambient_light[1]} {ambient_light[2]} 1</ambient>
+      <background>{background_color[0]} {background_color[1]} {background_color[2]} 1</background>
+      <shadows>false</shadows>
+    </scene>
     <gui fullscreen="0">
 
       <!-- 3D scene -->
@@ -32,20 +52,20 @@ SCENE_SDF_TEMPLATE = """
 
         <engine>ogre2</engine>
         <scene>scene</scene>
-        <ambient_light>0.4 0.4 0.4</ambient_light>
-        <background_color>0.8 0.8 0.8</background_color>
+        <ambient_light>{ambient_light[0]} {ambient_light[1]} {ambient_light[2]}</ambient_light>
+        <background_color>{background_color[0]} {background_color[1]} {background_color[2]}</background_color>
         <camera_pose>-6 0 6 0 0.5 0</camera_pose>
       </plugin>
 
       <!-- Plugins that add functionality to the scene -->
-      <plugin filename="EntityContextMenuPlugin" name="Entity context menu">
+      <!--plugin filename="EntityContextMenuPlugin" name="Entity context menu">
         <ignition-gui>
           <property key="state" type="string">floating</property>
           <property key="width" type="double">5</property>
           <property key="height" type="double">5</property>
           <property key="showTitleBar" type="bool">false</property>
         </ignition-gui>
-      </plugin>
+      </plugin-->
       <plugin filename="GzSceneManager" name="Scene Manager">
         <ignition-gui>
           <property key="resizable" type="bool">false</property>
@@ -129,11 +149,11 @@ SCENE_SDF_TEMPLATE = """
       </plugin>
 
       <!-- Entity tree -->
-      <plugin filename="EntityTree" name="Entity tree">
+      <!--plugin filename="EntityTree" name="Entity tree">
         <ignition-gui>
           <property type="string" key="state">docked_collapsed</property>
         </ignition-gui>
-      </plugin>
+      </plugin-->
 
       <!-- Image Display Plugins for visualization -->
       <plugin filename="ImageDisplay" name="Image Display">
@@ -229,12 +249,6 @@ SCENE_SDF_TEMPLATE = """
               <near>0.1</near>
               <far>20</far>
             </clip>
-            <!-- uncomment these lines to save segmentation data -->
-            <!--
-            <save enabled="true">
-              <path>segmentation_data/semantic_camera</path>
-            </save>
-            -->
           </camera>
           <always_on>1</always_on>
           <update_rate>{update_rate}</update_rate>
