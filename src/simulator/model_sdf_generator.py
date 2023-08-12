@@ -36,7 +36,8 @@ def main():
             )
             mesh = trimesh.load(mesh_file_path, force="mesh", process=False)
             collision_mesh = trimesh.convex.convex_hull(mesh)
-            _ = collision_mesh.export(f"{model_root_dir}/collision.dae")
+            collision_mesh = collision_mesh.simplify_quadric_decimation(200)
+            _ = collision_mesh.export(f"{model_root_dir}/collision.stl")
             _ = collision_mesh.export(
                 f"{model_root_dir}/collision.obj"
             )  # for visualization in meshlab
@@ -86,7 +87,7 @@ def main():
             with open(f"{model_root_dir}/model.config", "w") as cfg_file:
                 cfg_file.write(cfg_string)
 
-    print("write metadata file")
+    print("----------write metadata file----------")
     with open(f"{root_dir}/metadata.yaml", "w") as metadata_file:
         yaml.dump(metadata, metadata_file)
 

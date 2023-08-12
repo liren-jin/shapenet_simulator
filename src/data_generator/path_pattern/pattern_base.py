@@ -46,7 +46,7 @@ class PatternBase:
         self.theta_min = 0
         self.theta_max = 2 * np.pi
 
-    def init_camera_pose(self, initial_view):
+    def init_camera_pose(self):
         print("------ initialize camera pose ------ \n")
 
         if self.initial_type == "random":
@@ -58,9 +58,8 @@ class PatternBase:
 
         self.move_sensor(initial_view)
 
-    def start(self, initial_view=None):
-        self.init_camera_pose(initial_view)
-
+    def start(self):
+        self.init_camera_pose()
         while self.step < self.budget:
             next_view = self.plan_next_view()
             self.move_sensor(next_view)

@@ -23,7 +23,7 @@ MODEL_SDF_TEMPLATE = """
                     <geometry>
                         <mesh>
                             <scale>{scale[0]} {scale[1]} {scale[2]}</scale>
-                            <uri>collision.dae</uri>
+                            <uri>collision.stl</uri>
                         </mesh>
                     </geometry>
                 </collision>

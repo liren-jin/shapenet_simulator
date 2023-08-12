@@ -10,7 +10,7 @@
     type="create"
     name= "model1"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/airplane/8c11ef88dd944d00fca1f1143bb6bc17/model.sdf -name model1 -order 1 -x -0.764764360510214 -y -0.10035441008162002 -z 3.0 -Y 0.8397118600417883 -P 0.09952155301544474 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/chair/bbab666132885a14ea96899baeb81e22/model.sdf -name model1 -order 1 -x 0.10249666990477684 -y -0.08231746673293053 -z 3.0 -Y 0.1589961914944551 -P 0.09797455443816688 -R 1.570756">
   </node>
 
   <node
@@ -18,7 +18,7 @@
     type="create"
     name= "model2"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/sofa/d5b99ed4075d9ad559497798da6e2013/model.sdf -name model2 -order 2 -x -0.07858761690506705 -y -0.49227352943667146 -z 3.0 -Y -1.8970710207152826 -P 0.1042122848795835 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/chair/374e87fdee7711491e046801e2748f1a/model.sdf -name model2 -order 2 -x 0.5573869642160526 -y 0.36292071630729683 -z 3.0 -Y -2.2119303230369294 -P 0.17169395659301395 -R 1.570756">
   </node>
 
   <node
@@ -26,7 +26,7 @@
     type="create"
     name= "model3"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/airplane/8c11ef88dd944d00fca1f1143bb6bc17/model.sdf -name model3 -order 3 -x -0.14371563663666098 -y -0.08913075130952171 -z 3.0 -Y 1.1646157388048706 -P 0.18135733847797464 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/chair/e3e76d624f1f855bcc8a9c365968620/model.sdf -name model3 -order 3 -x 0.22568144195805565 -y 0.12052497236097903 -z 3.0 -Y 1.1430924507221571 -P 0.06528861613559933 -R 1.570756">
   </node>
 
   <node
@@ -34,7 +34,7 @@
     type="create"
     name= "model4"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/chair/1f82011c2303fc7babb8f41baefc4b12/model.sdf -name model4 -order 4 -x 0.0039366874400164585 -y 0.000302157236815075 -z 3.0 -Y 1.964197502060229 -P 0.04501042673175526 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/table/97551108bbb5afc36199d6fe090be061/model.sdf -name model4 -order 4 -x 0.1891591785650187 -y 0.0410244630668773 -z 3.0 -Y -2.351694460883591 -P 0.19372815487261996 -R 1.570756">
   </node>
 
   <node
@@ -42,7 +42,7 @@
     type="create"
     name= "model5"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/sofa/ca8c140ca26c4d6cc9b96a88ab877904/model.sdf -name model5 -order 5 -x 0.1877479998839739 -y -0.6969084780519214 -z 3.0 -Y 2.6248748117488234 -P 0.0858303133590762 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/car/402d1624e1c28422383a5be3771c595c/model.sdf -name model5 -order 5 -x -0.01067977181046987 -y -0.5273467879181883 -z 3.0 -Y 0.14439063352087933 -P -0.17725555653482075 -R 1.570756">
   </node>
 
   <node
@@ -50,7 +50,7 @@
     type="create"
     name= "model6"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/table/1a96d308eef57195efaa61516f88b67/model.sdf -name model6 -order 6 -x -0.34007093212022943 -y -0.4227365046782892 -z 3.0 -Y -0.7958000045966189 -P 0.06965344602653811 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/airplane/1b7ac690067010e26b7bd17e458d0dcb/model.sdf -name model6 -order 6 -x -0.16597692554327076 -y 0.09185223155113574 -z 3.0 -Y -1.4521411024091857 -P -0.010890287826618522 -R 1.570756">
   </node>
 
   <node
@@ -58,7 +58,15 @@
     type="create"
     name= "model7"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/chair/7212f652dd37232a80360680c1602c7d/model.sdf -name model7 -order 7 -x 0.40440173914813454 -y -0.1779769293887996 -z 3.0 -Y 0.7399299257227199 -P 0.005255297021756367 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/bottle/dd280525cf000bc3a608634464309a70/model.sdf -name model7 -order 7 -x -0.024620851253706028 -y 0.5179612127571749 -z 3.0 -Y 0.3194855120871636 -P 0.13911599209088127 -R 1.570756">
+  </node>
+
+  <node
+    pkg="ros_ign_gazebo"
+    type="create"
+    name= "model8"
+    output="screen"
+    args="-world scene_base -file $(find simulator)/models/airplane/2d43c1430df8194ace5721ccacba16/model.sdf -name model8 -order 8 -x 0.3990889876382149 -y 0.7827080461772777 -z 3.0 -Y 0.8169169827319762 -P -0.009266022990675304 -R 1.570756">
   </node>
 
 </launch>

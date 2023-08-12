@@ -21,16 +21,16 @@ SCENE_SDF_TEMPLATE = """
     </plugin>
 
     <physics type='ode'>
-      <max_step_size>0.002</max_step_size>
+      <max_step_size>0.001</max_step_size>
       <real_time_factor>1</real_time_factor>
       <real_time_update_rate>1000</real_time_update_rate>
       <ode>
         <solver>
             <type>quick</type>
-            <iters>20</iters>
+            <iters>50</iters>
         </solver>
         <constraints>
-          <contact_max_correcting_vel>0</contact_max_correcting_vel>
+          <contact_max_correcting_vel>1</contact_max_correcting_vel>
         </constraints>
       </ode>
     </physics>
@@ -269,7 +269,7 @@ SCENE_SDF_TEMPLATE = """
             </plane>
           </geometry>
         </collision>
-        <visual name="visual">
+        <!--visual name="visual">
           <geometry>
             <plane>
               <normal>0 0 1</normal>
@@ -281,7 +281,7 @@ SCENE_SDF_TEMPLATE = """
             <diffuse>0.8 0.8 0.8 1</diffuse>
             <specular>0.8 0.8 0.8 1</specular>
           </material>
-        </visual>
+        </visual-->
       </link>
     </model>
 
