@@ -96,9 +96,9 @@ LABELS = {
         "car": {"color": (1, 0, 1), "id": 1},
         "chair": {"color": (0, 0, 1), "id": 2},
         "table": {"color": (0, 1, 1), "id": 3},
-        "mug": {"color": (0, 1, 0), "id": 4},
-        "ship": {"color": (1, 1, 0), "id": 5},
-        "sofa": {"color": (1, 0, 0), "id": 6},
+        "sofa": {"color": (1, 0, 0), "id": 4},
+        "airplane": {"color": (0.4, 0, 0.8), "id": 5},
+        "bottle": {"color": (0, 1, 0), "id": 6},
     }
 }
 
