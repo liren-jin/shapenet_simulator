@@ -92,24 +92,24 @@ def random_view(current_xyz, radius, phi_min, min_view_change, max_view_change):
 
 LABELS = {
     "shapenet": {
-        "background": {"color": (1, 1, 1), "id": 0},
-        "car": {"color": (1, 0, 1), "id": 1},
-        "chair": {"color": (0, 0, 1), "id": 2},
-        "table": {"color": (0, 1, 1), "id": 3},
-        "sofa": {"color": (1, 0, 0), "id": 4},
-        "airplane": {"color": (0.4, 0, 0.8), "id": 5},
-        "bottle": {"color": (0, 1, 0), "id": 6},
+        "background": {"color": (255, 255, 255), "id": 0},
+        "car": {"color": (255, 0, 255), "id": 1},
+        "chair": {"color": (0, 0, 255), "id": 2},
+        "table": {"color": (0, 255, 255), "id": 3},
+        "sofa": {"color": (255, 0, 0), "id": 4},
+        "airplane": {"color": (102, 0, 204), "id": 5},
+        "bottle": {"color": (0, 255, 0), "id": 6},
     }
 }
 
 
 def label2color(label_map, theme="shapenet"):
     assert theme in LABELS.keys()
-    rgb = np.zeros((label_map.shape[0], label_map.shape[1], 3), np.float32)
+    rgb = np.zeros((label_map.shape[0], label_map.shape[1], 3), np.int8)
     for _, cl in LABELS[theme].items():  # loop each class label
         if cl["color"] == (0, 0, 0):
             continue  # skip assignment of only zeros
-        mask = np.where(label_map == cl["id"], 1.0, 0.0)
+        mask = np.where(label_map == cl["id"], 1, 0)
         rgb[:, :, 0] += mask * cl["color"][0]
         rgb[:, :, 1] += mask * cl["color"][1]
         rgb[:, :, 2] += mask * cl["color"][2]

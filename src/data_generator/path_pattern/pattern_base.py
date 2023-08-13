@@ -110,8 +110,7 @@ class PatternBase:
                 np.save(f, semantic_array)
 
             # for visualizing semantic label
-            semantic_map = utils.label2color(semantic)
-            semantic_map = np.round(semantic_map * 255).astype("uint8")
+            semantic_map = utils.label2color(semantic).astype("uint8")
             imageio.imwrite(f"{semantics_path}/{i+1:04d}.png", semantic_map)
 
         with open(f"{self.record_path}/trajectory.npy", "wb") as f:
