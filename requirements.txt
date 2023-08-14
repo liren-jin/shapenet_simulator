@@ -3,3 +3,4 @@ pyrender
 pyyaml
 numpy
 pycollada
+open3d
