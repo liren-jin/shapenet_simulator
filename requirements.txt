@@ -1,6 +1,6 @@
-trimesh
-pyrender
-pyyaml
-numpy
-pycollada
-open3d
+trimesh==3.23.1
+pyrender==0.1.45
+pyyaml==6.0.1
+numpy==1.25.2
+pycollada==0.7.2
+open3d==0.17.0

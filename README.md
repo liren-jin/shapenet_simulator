@@ -12,7 +12,15 @@ cd shapenet_simulator
 docker build . -t shapenet-simulator:v0
 ```
 ## Generate a Scene
-The simulator supports generation of random scenes. We use python to generate files that can be used for the simulator, e.g., launch and sdf files, use requirement.txt to install necessary python packages. 
+The simulator supports generation of random scenes. 
+
+(optional) We use python to generate files that can be used for the simulator, e.g., launch and sdf files, use requirements.txt to install necessary python packages:
+```commandline
+conda create -n shapenet-simulator python==3.9
+conda activate shapenet-simulator
+pip install -r requirements.txt
+
+```
 
 (optional) For the first time or when new models are added into the repo, we generate individual model sdf:
 ```commandline
