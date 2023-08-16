@@ -1,5 +1,4 @@
 # Shapenet Simulator: A Simulator using Multiple Shapenet Model Objects with Semantic Rendering
-Liren Jin, University of Bonn
 
 An example of the simulator:
 ![Framework](doc/example.png)
@@ -25,18 +24,18 @@ pip install -r requirements.txt
 (optional) For the first time or when new models are added into the repo, we generate individual model sdf:
 ```commandline
 cd src/simulation
-python3 model_sdf_generator.py
+python model_sdf_generator.py
 ```
 
 (optional) We also need a scene sdf file describing all scene properties:
 ```commandline
-python3 scene_sdf_generator.py
+python scene_sdf_generator.py
 ```
 For customizing scene properties, using simulator/cfg/scene_cfg.yaml.
 
 To generate a new launch file to launch scene and models:
 ```commandline
-python3 launch_file_generator.py -N <number of objects> -S <seed number>
+python launch_file_generator.py -N <number of objects> -S <seed number>
 ```
 Random seed -S together with object number -N specify a scene configuration. If you do not want to reproduce a scene configuratin, leave out -S flag. 
 
@@ -50,6 +49,7 @@ make simulation
 ```
 
 If everything goes well, you should see an Ignition-Gazebo user interface. It may take a few seconds untill all objects stay static (In case it crushes, just restart the simulation, it always helps). 
+To interact with the simulator in your own project, follow the topics and message types listed below: 
 
 required topic:
 - /set_camera_pose [geometry_msgs/Pose]
@@ -73,7 +73,7 @@ src/simulator/models
 |    |__ model2
 |    |__ ...
 |
-|__ ship
+|__ airplane
 |   |__ model1
 |   |__ model2
 |   |__ ...
@@ -83,9 +83,12 @@ src/simulator/models
 ```
 
 ## Data Generation
-Our simulator can be used to generate data set for semantic segmentation training:
+Our simulator can be used to generate data set for semantic segmentation training, in the conda environment:
 ```commandline
 cd src/data_generator
-python3 main.py -P <path pattern> -BG <budget number>
+python main.py -P <path pattern> -BG <budget number>
 ```
 Currently, coverage, random and uniform path pattern are supported.
+
+## Maintainer
+Liren Jin, University of Bonn, ljin@uni-bonn.de
