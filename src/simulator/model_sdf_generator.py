@@ -31,6 +31,7 @@ def main():
             print(f"generating {category}/{model} sdf file")
 
             model_root_dir = os.path.join(category_root_dir, model)
+
             mesh_file_path = os.path.join(
                 model_root_dir, "models", "model_normalized.obj"
             )

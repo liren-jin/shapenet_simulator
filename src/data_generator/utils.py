@@ -93,12 +93,13 @@ def random_view(current_xyz, radius, phi_min, min_view_change, max_view_change):
 LABELS = {
     "shapenet": {
         "background": {"color": (255, 255, 255), "id": 0},
-        "car": {"color": (255, 0, 255), "id": 1},
+        "car": {"color": (102, 102, 102), "id": 1},
         "chair": {"color": (0, 0, 255), "id": 2},
         "table": {"color": (0, 255, 255), "id": 3},
         "sofa": {"color": (255, 0, 0), "id": 4},
         "airplane": {"color": (102, 0, 204), "id": 5},
-        "bottle": {"color": (0, 255, 0), "id": 6},
+        "camera": {"color": (0, 102, 0), "id": 6},
+        "birdhouse": {"color": (255, 153, 204), "id": 7},
     }
 }
 

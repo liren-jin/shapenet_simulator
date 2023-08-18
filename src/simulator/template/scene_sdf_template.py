@@ -21,7 +21,7 @@ SCENE_SDF_TEMPLATE = """
     </plugin>
 
     <physics type='ode'>
-      <max_step_size>0.001</max_step_size>
+      <max_step_size>0.0005</max_step_size>
       <real_time_factor>1</real_time_factor>
       <real_time_update_rate>0</real_time_update_rate>
       <ode>
@@ -344,7 +344,7 @@ SCENE_SDF_TEMPLATE = """
         </collision>
       </link>
     </model>
-    <gravity>0.0 0.0 -30.0</gravity>
+    <gravity>0.0 0.0 -15.0</gravity>
   </world>
 </sdf>
 """
