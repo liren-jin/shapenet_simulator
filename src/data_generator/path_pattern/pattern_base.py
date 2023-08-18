@@ -76,7 +76,7 @@ class PatternBase:
         print(
             f"------ reach given pose and take measurement No.{self.step + 1} ------\n"
         )
-        time.sleep(0.7)  # lazy solution to make sure we receive correct images
+        time.sleep(1.0)  # lazy solution to make sure we receive correct images
         rgb, depth, semantic = self.simulator_bridge.get_measurement()
         self.record_step(view, pose, rgb, depth, semantic)
         self.step += 1

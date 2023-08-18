@@ -26,6 +26,11 @@ MODEL_SDF_TEMPLATE = """
                             <uri>collision.stl</uri>
                         </mesh>
                     </geometry>
+                    <surface>
+                        <bounce>
+                            <restitution_coefficient> 0 </restitution_coefficient>  
+                        </bounce>
+                    </surface>
                 </collision>
             </link>
             <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
