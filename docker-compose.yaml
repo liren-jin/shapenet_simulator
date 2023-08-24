@@ -18,6 +18,7 @@ services:
     privileged: true
     volumes:
       - ./src/simulator/models/:/shapenet_simulator/src/simulator/models/:rw
+      - ./src/simulator/scenes/:/shapenet_simulator/src/simulator/scenes/:rw
       - ./src/simulator/scene_base.sdf:/shapenet_simulator/src/simulator/scene_base.sdf:rw
       - ./src/simulator/launch/simulation.launch:/shapenet_simulator/src/simulator/launch/simulation.launch:rw
       - /tmp/.X11-unix:/tmp/.X11-unix:rw

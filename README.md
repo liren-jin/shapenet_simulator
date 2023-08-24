@@ -60,7 +60,17 @@ published topics:
 - /rgbd/image [sensor_msgs/Image]
 - /semantic/labels_map [sensor_msgs/Image]
 
-
+## Save Current Scene and Reopen
+If you wish to save current scene for better reproducibility / future usage, in gazebo interface, click menu logo and save world to the src/simulator/scenes folder. 
+To reopen the scene:
+```commandline
+xhost +local:docker
+make
+make enter
+cd shapenet_simulator/src/simulator/scenes
+ign gazebo <scene_name>.sdf
+```
+You should see the same world you saved. 
 
 ## Models
 Shapenet model can be download from [here](https://shapenet.org/download/shapenetcore).
@@ -89,6 +99,7 @@ cd src/data_generator
 python main.py -P <path pattern> -BG <budget number>
 ```
 Currently, coverage, random and uniform path pattern are supported.
+
 
 ## Maintainer
 Liren Jin, University of Bonn, ljin@uni-bonn.de
