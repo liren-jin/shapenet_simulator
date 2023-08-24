@@ -9,7 +9,7 @@ simulation:
 
 enter:
 	docker exec -d simulator_container bash -ic "rosnode kill -a && roslaunch simulator ros_bridge.launch"
-	docker exec -it simulator_container bash -i
-
+	docker exec -it simulator_container bash -ic "cd /shapenet_simulator/src/simulator/scenes && exec bash"
+	
 down:
 	docker compose down

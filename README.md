@@ -67,7 +67,6 @@ To reopen the scene:
 xhost +local:docker
 make
 make enter
-cd shapenet_simulator/src/simulator/scenes
 ign gazebo <scene_name>.sdf
 ```
 You should see the same world you saved. 
