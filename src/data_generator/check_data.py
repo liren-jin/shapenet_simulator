@@ -6,7 +6,7 @@ import glob
 data_rootdir = "records/uniform"
 
 
-###### hard coded only for this simulator #####
+###### hard coded only for this simulator with current scene configuration #####
 ###### for sanity check of the semantic label #####
 def check_overlap(image, label, anno_map):
     image = image.reshape(-1, 3)

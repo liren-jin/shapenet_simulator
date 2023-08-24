@@ -10,7 +10,7 @@
     type="create"
     name= "model1"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/sofa/23c65f2ca9165072490ad276cd2af3a4/model.sdf -name model1 -order 1 -x 0.630229127348196 -y -0.2373234096234486 -z 3.0 -Y 2.961491724474621 -P -0.16287164303723017 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/sofa/611f5a21a6f9ad3d7635d2483a62c61e/model.sdf -name model1 -order 1 -x -0.024159930550324938 -y 0.03055368875536685 -z 3.0 -Y 1.5487614348942071 -P 0.14557115729796238 -R 1.570756">
   </node>
 
   <node
@@ -18,7 +18,7 @@
     type="create"
     name= "model2"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/sofa/ca8c140ca26c4d6cc9b96a88ab877904/model.sdf -name model2 -order 2 -x -0.8815012805340819 -y -0.24602926768918218 -z 3.0 -Y -0.6344202302729482 -P -0.059336477522084735 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/camera/e85debbd554525d198494085d68ad6a0/model.sdf -name model2 -order 2 -x -0.48987589626608063 -y -0.27130083088650075 -z 3.0 -Y -1.6861291365620013 -P -0.10309439195432933 -R 1.570756">
   </node>
 
   <node
@@ -26,7 +26,7 @@
     type="create"
     name= "model3"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/sofa/f094521e8579917eea65c47b660136e7/model.sdf -name model3 -order 3 -x -0.2187352707390058 -y -0.21010985603871982 -z 3.0 -Y 2.8093222709771513 -P 0.04055522253106991 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/airplane/27acb1d0e8c808262347b4731688b0f/model.sdf -name model3 -order 3 -x 0.48130630456854173 -y 0.3836463306853794 -z 3.0 -Y -2.486924310951278 -P -0.02966079627132845 -R 1.570756">
   </node>
 
   <node
@@ -34,7 +34,7 @@
     type="create"
     name= "model4"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/camera/97690c4db20227d248e23e2c398d8046/model.sdf -name model4 -order 4 -x 0.3094354603638367 -y -0.5330977320928514 -z 3.0 -Y 0.9379951774311412 -P -0.007169098799669482 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/camera/f1540b3d6da38fbf1d908355fc20d631/model.sdf -name model4 -order 4 -x -0.45244372393977295 -y 0.4735172649987413 -z 3.0 -Y -0.3864733787879566 -P 0.08551652953335775 -R 1.570756">
   </node>
 
   <node
@@ -42,7 +42,7 @@
     type="create"
     name= "model5"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/chair/c9d5ff677600b0a1a01ae992b62200ab/model.sdf -name model5 -order 5 -x 0.4466972438110365 -y -0.6092719598826019 -z 3.0 -Y 0.7681095661124582 -P -0.15233511629646201 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/camera/82819e1201d2dc583a3e53900c6cbba/model.sdf -name model5 -order 5 -x -0.04955442410513936 -y 0.03176636799554961 -z 3.0 -Y 0.13707565749020167 -P 0.09097179862344612 -R 1.570756">
   </node>
 
   <node
@@ -50,23 +50,7 @@
     type="create"
     name= "model6"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/table/20b8c6959784f2da83b763ebf4ad2b38/model.sdf -name model6 -order 6 -x 0.3564490192523849 -y 0.5142927898378343 -z 3.0 -Y 1.967691240372178 -P -0.1619171792445948 -R 1.570756">
-  </node>
-
-  <node
-    pkg="ros_ign_gazebo"
-    type="create"
-    name= "model7"
-    output="screen"
-    args="-world scene_base -file $(find simulator)/models/car/bf506399c934c6b3c3eedd6d54e2a52/model.sdf -name model7 -order 7 -x -0.4918344552820784 -y -0.26235348833818695 -z 3.0 -Y 0.6527610845279082 -P 0.08713333698984516 -R 1.570756">
-  </node>
-
-  <node
-    pkg="ros_ign_gazebo"
-    type="create"
-    name= "model8"
-    output="screen"
-    args="-world scene_base -file $(find simulator)/models/sofa/9ec5fcbfe43af15b851a116903680096/model.sdf -name model8 -order 8 -x -0.5400031939214505 -y 0.4517235201422659 -z 3.0 -Y -0.41059601695406833 -P -0.10741804200330135 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/birdhouse/6918606915c91f0ec5c86021644af7b5/model.sdf -name model6 -order 6 -x -0.3452707267564622 -y -0.3565751864993291 -z 3.0 -Y -1.1567921441439049 -P 0.06496108012568796 -R 1.570756">
   </node>
 
 </launch>

@@ -177,21 +177,22 @@ def record_meta_data(path, camera_info, trajectory):
     record_dict["p2"] = 0.000001
     record_dict["cx"] = c[0]
     record_dict["cy"] = c[1]
-    record_dict["w"] = resolution[0]
-    record_dict["h"] = resolution[1]
+    record_dict["h"] = resolution[0]
+    record_dict["w"] = resolution[1]
     record_dict["frames"] = []
     record_dict["scale"] = 1.0
     record_dict["aabb_scale"] = 2.0
 
     for i, pose in enumerate(trajectory):
         image_file = f"images/{i+1:04d}.png"
-        image_path = os.path.join(path, image_file)
-        semantic_file = f"semantics/semantic_{i+1:04d}.png"
+        semantic_label_file = f"semantics/semantic_{i+1:04d}.npy"
+        semantic_file = f"semantics/{i+1:04d}.png"
         depth_file = f"depths/depth_{i+1:04d}.npy"
 
         data_frame = {
             "file_path": image_file,
             "semantic_path": semantic_file,
+            "semantic_label_path": semantic_label_file,
             "depth_path": depth_file,
             "transform_matrix": pose.tolist(),
         }
