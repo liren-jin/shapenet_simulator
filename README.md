@@ -48,7 +48,9 @@ make
 make simulation
 ```
 
-If everything goes well, you should see an Ignition-Gazebo user interface. It may take a few seconds untill all objects stay static (In case it crushes, just restart the simulation, it always helps). 
+If everything goes well, you should see an Ignition-Gazebo user interface. It may take a few seconds untill all objects stay static (In case it crushes, just restart the simulation, it always helps). If you wish to save current scene for better reproducibility / future usage, in gazebo interface, click menu logo and save world to the src/simulator/scenes folder. 
+
+
 To interact with the simulator in your own project, follow the topics and message types listed below: 
 
 required topic:
@@ -61,13 +63,12 @@ published topics:
 - /semantic/labels_map [sensor_msgs/Image]
 
 ## Save Current Scene and Reopen
-If you wish to save current scene for better reproducibility / future usage, in gazebo interface, click menu logo and save world to the src/simulator/scenes folder. 
-To reopen the scene:
+To reopen a scene via saved world sdf file:
 ```commandline
 xhost +local:docker
 make
 make enter
-ign gazebo <scene_name>.sdf
+ign gazebo -r <scene_name>.sdf
 ```
 You should see the same world you saved. 
 
