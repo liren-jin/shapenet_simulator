@@ -10,7 +10,7 @@
     type="create"
     name= "model1"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/airplane/596c6e1e27b102aedf9d17a71b5ddec2/model.sdf -name model1 -order 1 -x -0.04824068380367809 -y -0.025606359580972456 -z 3.0 -Y -2.8910179200595123 -P -0.13652266290676696 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/sofa/f094521e8579917eea65c47b660136e7/model.sdf -name model1 -order 1 -x -0.5950317562835731 -y -0.2837267610412729 -z 3.0 -Y -0.18547982621362769 -P 0.13719407419316976 -R 1.570756">
   </node>
 
   <node
@@ -18,7 +18,7 @@
     type="create"
     name= "model2"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/table/8010b1ce4e4b1a472a82acb89c31cb53/model.sdf -name model2 -order 2 -x 0.11992098624748958 -y 0.17956895065160852 -z 3.0 -Y 2.3128555886250983 -P 0.12702435351657776 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/sofa/9ec5fcbfe43af15b851a116903680096/model.sdf -name model2 -order 2 -x -0.04113356926999385 -y -0.17018095004209913 -z 3.0 -Y -1.7725359939216145 -P -0.18443669980091523 -R 1.570756">
   </node>
 
   <node
@@ -26,7 +26,7 @@
     type="create"
     name= "model3"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/table/d073f58c96c17aca95786b1c8687acc/model.sdf -name model3 -order 3 -x 0.0556092761511041 -y 0.045445967884921855 -z 3.0 -Y 0.1305054515994919 -P -0.07697245550574672 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/sofa/e9d6a366a92a61d979c851829c339535/model.sdf -name model3 -order 3 -x 0.6767808614327121 -y -0.24659648769481404 -z 3.0 -Y -1.0021524249162628 -P 0.14894908267313006 -R 1.570756">
   </node>
 
   <node
@@ -34,7 +34,7 @@
     type="create"
     name= "model4"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/table/551bf4f010f155ea4718e6c48e1ed95d/model.sdf -name model4 -order 4 -x -0.509034781826667 -y 0.12489128841202907 -z 3.0 -Y -0.8351103671859619 -P -0.09177115599581342 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/airplane/596c6e1e27b102aedf9d17a71b5ddec2/model.sdf -name model4 -order 4 -x 0.5483486703169761 -y -0.23077523312715845 -z 3.0 -Y 1.9380996114036608 -P -0.03936563758706324 -R 1.570756">
   </node>
 
   <node
@@ -42,7 +42,7 @@
     type="create"
     name= "model5"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/sofa/23c65f2ca9165072490ad276cd2af3a4/model.sdf -name model5 -order 5 -x -0.21112787552527693 -y -0.571805102714114 -z 3.0 -Y -1.5993556086335203 -P 0.15839145979067876 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/table/b0c37b379725feec97ed2c3bf3711e68/model.sdf -name model5 -order 5 -x 0.1666014112557402 -y -0.2101515103392921 -z 3.0 -Y 0.9350920545907129 -P 0.1385824369925261 -R 1.570756">
   </node>
 
   <node
@@ -50,7 +50,7 @@
     type="create"
     name= "model6"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/camera/cda4fc24b2a602b5b5328fde615e4a0c/model.sdf -name model6 -order 6 -x 0.7106151116697385 -y -0.2820645734805694 -z 3.0 -Y 1.7034610221769664 -P -0.10172869526054834 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/airplane/596c6e1e27b102aedf9d17a71b5ddec2/model.sdf -name model6 -order 6 -x 0.10063067903858254 -y -0.1438695561373604 -z 3.0 -Y 1.1274455940718995 -P 0.09894420867828785 -R 1.570756">
   </node>
 
   <node
@@ -58,7 +58,7 @@
     type="create"
     name= "model7"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/camera/82819e1201d2dc583a3e53900c6cbba/model.sdf -name model7 -order 7 -x 0.16457612113632283 -y 0.847326856888144 -z 3.0 -Y -1.5533561659614126 -P 0.09494072795782482 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/chair/1f82011c2303fc7babb8f41baefc4b12/model.sdf -name model7 -order 7 -x -0.014015645398527095 -y 0.02105851587225813 -z 3.0 -Y 0.5867743812014683 -P 0.054830158305869736 -R 1.570756">
   </node>
 
 </launch>

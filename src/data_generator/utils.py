@@ -185,15 +185,15 @@ def record_meta_data(path, camera_info, trajectory):
 
     for i, pose in enumerate(trajectory):
         image_file = f"images/{i+1:04d}.png"
-        semantic_label_file = f"semantics/semantic_{i+1:04d}.npy"
-        semantic_file = f"semantics/{i+1:04d}.png"
+        gt_semantic_file = f"semantics/gt_{i+1:04d}.npy"
+        gt_semantic_map_file = f"semantics/gt_{i+1:04d}.png"
         depth_file = f"depths/depth_{i+1:04d}.npy"
 
         data_frame = {
-            "file_path": image_file,
-            "semantic_path": semantic_file,
-            "semantic_label_path": semantic_label_file,
+            "image_path": image_file,
             "depth_path": depth_file,
+            "gt_semantic_path": gt_semantic_file,
+            "gt_semantic_map_path": gt_semantic_map_file,
             "transform_matrix": pose.tolist(),
         }
         record_dict["frames"].append(data_frame)

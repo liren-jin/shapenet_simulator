@@ -105,13 +105,13 @@ class PatternBase:
                 np.save(f, depth_array)
 
         for i, semantic in enumerate(self.semantic_measurements):
-            with open(f"{semantics_path}/semantic_{i+1:04d}.npy", "wb") as f:
+            with open(f"{semantics_path}/gt_{i+1:04d}.npy", "wb") as f:
                 semantic_array = np.array(semantic, dtype=np.int8)
                 np.save(f, semantic_array)
 
             # for visualizing semantic label
             semantic_map = utils.label2color(semantic).astype("uint8")
-            imageio.imwrite(f"{semantics_path}/{i+1:04d}.png", semantic_map)
+            imageio.imwrite(f"{semantics_path}/gt_{i+1:04d}.png", semantic_map)
 
         with open(f"{self.record_path}/trajectory.npy", "wb") as f:
             np.save(f, self.trajectory)
