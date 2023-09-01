@@ -1,0 +1,480 @@
+<sdf version='1.9'>
+  <world name='scene_base'>
+    <plugin name='ignition::gazebo::systems::Physics' filename='ignition-gazebo-physics-system'/>
+    <plugin name='ignition::gazebo::systems::UserCommands' filename='ignition-gazebo-user-commands-system'/>
+    <plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='ignition-gazebo-scene-broadcaster-system'/>
+    <plugin name='ignition::gazebo::systems::Sensors' filename='ignition-gazebo-sensors-system'>
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>0</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>50</iters>
+          <sor>1.3</sor>
+          <use_dynamic_moi_rescaling>false</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <contact_max_correcting_vel>1</contact_max_correcting_vel>
+          <cfm>0</cfm>
+          <erp>0.20000000000000001</erp>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.9 0.9 0.9 1</background>
+      <shadows>false</shadows>
+    </scene>
+    <gui fullscreen='false'>
+      <plugin name='3D View' filename='MinimalScene'>
+        <ignition-gui>
+          <title>3D View</title>
+          <property type='bool' key='showTitleBar'>false</property>
+          <property type='string' key='state'>docked</property>
+        </ignition-gui>
+        <engine>ogre2</engine>
+        <scene>scene</scene>
+        <ambient_light>0.4 0.4 0.4</ambient_light>
+        <background_color>0.9 0.9 0.9</background_color>
+        <camera_pose>-6 0 6 0 0.5 0</camera_pose>
+      </plugin>
+      <plugin name='Scene Manager' filename='GzSceneManager'>
+        <ignition-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='width' type='double'>5</property>
+          <property key='height' type='double'>5</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+        </ignition-gui>
+      </plugin>
+      <plugin name='Interactive view control' filename='InteractiveViewControl'>
+        <ignition-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='width' type='double'>5</property>
+          <property key='height' type='double'>5</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+        </ignition-gui>
+      </plugin>
+      <plugin name='Camera Tracking' filename='CameraTracking'>
+        <ignition-gui>
+          <property key='resizable' type='bool'>false</property>
+          <property key='width' type='double'>5</property>
+          <property key='height' type='double'>5</property>
+          <property key='state' type='string'>floating</property>
+          <property key='showTitleBar' type='bool'>false</property>
+        </ignition-gui>
+      </plugin>
+      <plugin name='World control' filename='WorldControl'>
+        <ignition-gui>
+          <title>World control</title>
+          <property type='bool' key='showTitleBar'>false</property>
+          <property type='bool' key='resizable'>false</property>
+          <property type='double' key='height'>72</property>
+          <property type='double' key='width'>121</property>
+          <property type='double' key='z'>1</property>
+          <property type='string' key='state'>floating</property>
+          <anchors target='3D View'>
+            <line own='left' target='left'/>
+            <line own='bottom' target='bottom'/>
+          </anchors>
+        </ignition-gui>
+        <play_pause>true</play_pause>
+        <step>true</step>
+        <start_paused>false</start_paused>
+        <use_event>true</use_event>
+      </plugin>
+      <plugin name='World stats' filename='WorldStats'>
+        <ignition-gui>
+          <title>World stats</title>
+          <property type='bool' key='showTitleBar'>false</property>
+          <property type='bool' key='resizable'>false</property>
+          <property type='double' key='height'>110</property>
+          <property type='double' key='width'>290</property>
+          <property type='double' key='z'>1</property>
+          <property type='string' key='state'>floating</property>
+          <anchors target='3D View'>
+            <line own='right' target='right'/>
+            <line own='bottom' target='bottom'/>
+          </anchors>
+        </ignition-gui>
+        <sim_time>true</sim_time>
+        <real_time>true</real_time>
+        <real_time_factor>true</real_time_factor>
+        <iterations>true</iterations>
+      </plugin>
+      <plugin name='Component inspector' filename='ComponentInspector'>
+        <ignition-gui>
+          <property type='string' key='state'>docked_collapsed</property>
+        </ignition-gui>
+      </plugin>
+      <plugin name='Image Display' filename='ImageDisplay'>
+        <ignition-gui/>
+        <topic>semantic/colored_map</topic>
+      </plugin>
+      <plugin name='Image Display' filename='ImageDisplay'>
+        <ignition-gui/>
+        <topic>rgbd/image</topic>
+      </plugin>
+      <plugin name='Image Display' filename='ImageDisplay'>
+        <ignition-gui/>
+        <topic>rgbd/depth_image</topic>
+      </plugin>
+    </gui>
+    <gravity>0 0 -15</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <model name='camera'>
+      <static>true</static>
+      <pose>0.399986 0 2.16333 -0 1.38797 3.14159</pose>
+      <link name='link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <iyy>1</iyy>
+            <izz>1</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.05 0.1 0.1</size>
+            </box>
+          </geometry>
+        </visual>
+        <sensor name='rgbd_camera' type='rgbd_camera'>
+          <topic>rgbd</topic>
+          <camera>
+            <horizontal_fov>1.2</horizontal_fov>
+            <image>
+              <width>480</width>
+              <height>360</height>
+            </image>
+            <clip>
+              <near>0.10000000000000001</near>
+              <far>20</far>
+            </clip>
+            <vertical_fov>0.9</vertical_fov>
+          </camera>
+          <always_on>true</always_on>
+          <update_rate>20</update_rate>
+          <visualize>true</visualize>
+        </sensor>
+        <sensor name='semantic_segmentation_camera' type='segmentation_camera'>
+          <pose>0 0 0 0 -0 0</pose>
+          <topic>semantic</topic>
+          <update_rate>20</update_rate>
+          <enable_metrics>false</enable_metrics>
+          <camera name='__default__'>
+            <pose>0 0 0 0 -0 0</pose>
+            <horizontal_fov>1.2</horizontal_fov>
+            <image>
+              <width>480</width>
+              <height>360</height>
+              <format>RGB_INT8</format>
+              <anti_aliasing>4</anti_aliasing>
+            </image>
+            <camera_info_topic>__default__</camera_info_topic>
+            <trigger_topic></trigger_topic>
+            <triggered>false</triggered>
+            <clip>
+              <near>0.10000000000000001</near>
+              <far>20</far>
+            </clip>
+            <save enabled='false'>
+              <path>__default__</path>
+            </save>
+            <visibility_mask>4294967295</visibility_mask>
+            <noise>
+              <type>none</type>
+              <mean>0</mean>
+              <stddev>0</stddev>
+            </noise>
+            <distortion>
+              <k1>0</k1>
+              <k2>0</k2>
+              <k3>0</k3>
+              <p1>0</p1>
+              <p2>0</p2>
+              <center>0.5 0.5</center>
+            </distortion>
+            <lens>
+              <type>stereographic</type>
+              <scale_to_hfov>true</scale_to_hfov>
+              <cutoff_angle>1.5708</cutoff_angle>
+              <env_texture_size>256</env_texture_size>
+            </lens>
+            <segmentation_type>semantic</segmentation_type>
+            <optical_frame_id></optical_frame_id>
+          </camera>
+        </sensor>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='wall1'>
+      <static>true</static>
+      <pose>0 -1 0.1 0 -0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 1 0</normal>
+              <size>2 0.2</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='wall2'>
+      <static>true</static>
+      <pose>0 1 0.1 0 -0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 -1 0</normal>
+              <size>2 0.2</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='wall3'>
+      <static>true</static>
+      <pose>1 0 0.1 0 -0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>-1 0 0</normal>
+              <size>0.2 2</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='wall4'>
+      <static>true</static>
+      <pose>-1 0 0.1 0 -0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>1 0 0</normal>
+              <size>0.2 2</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/airplane/596c6e1e27b102aedf9d17a71b5ddec2</uri>
+      <name>model1</name>
+      <pose>0.358122 -0.124085 0.068653 1.57079 1e-06 2.02217</pose>
+    </include>
+    <include>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/sofa/5cf46a99a9dfdc07411e8b42940aba04</uri>
+      <name>model2</name>
+      <pose>-0.561418 0.503674 0.069794 -1.00261 -0.015065 -2.23869</pose>
+    </include>
+    <include>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/birdhouse/2e81196fa81cc1fba29538f582b2005</uri>
+      <name>model3</name>
+      <pose>0.575023 -0.60825 0.176955 1.57081 1.41358 -0.123902</pose>
+    </include>
+    <include>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/chair/bbab666132885a14ea96899baeb81e22</uri>
+      <name>model4</name>
+      <pose>-0.596862 -0.09798 0.18417 -1.57089 1.57047 -0.291269</pose>
+    </include>
+    <include>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/birdhouse/7a2642b37028b462d39f9e7f9f528702</uri>
+      <name>model5</name>
+      <pose>0.221713 -0.623332 0.217691 1.5708 -3e-06 -1.21752</pose>
+    </include>
+    <include>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/sofa/145bd097a4b1cb8a44db04bfb021976e</uri>
+      <name>model6</name>
+      <pose>-0.058436 0.038137 0.272084 1.56995 -0.232638 -0.570836</pose>
+    </include>
+    <include>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/camera/cda4fc24b2a602b5b5328fde615e4a0c</uri>
+      <name>model7</name>
+      <pose>-0.612161 -0.595569 0.233849 -3.14159 1.26135 -0.824794</pose>
+    </include>
+    <include>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/airplane/1b7ac690067010e26b7bd17e458d0dcb</uri>
+      <name>model8</name>
+      <pose>-0.141506 -0.02867 0.429252 1.64146 0.22843 -3.12087</pose>
+    </include>
+    <light name='sun' type='directional'>
+      <pose>0 0 20 0 -0 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0 0 -1</direction>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>

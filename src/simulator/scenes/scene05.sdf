@@ -131,7 +131,7 @@
     <atmosphere type='adiabatic'/>
     <model name='camera'>
       <static>true</static>
-      <pose>-1.17815 1.5383 0.495558 -0 0.250387 -0.91721</pose>
+      <pose>2 0 1 0 -0 3.14</pose>
       <link name='link'>
         <pose>0 0 0 0 -0 0</pose>
         <inertial>
@@ -275,13 +275,13 @@
     </model>
     <model name='wall1'>
       <static>true</static>
-      <pose>0 -1.2 0.1 0 -0 0</pose>
+      <pose>0 -1 0.1 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <plane>
               <normal>0 1 0</normal>
-              <size>2.4 0.2</size>
+              <size>2 0.2</size>
             </plane>
           </geometry>
           <surface>
@@ -311,13 +311,13 @@
     </model>
     <model name='wall2'>
       <static>true</static>
-      <pose>0 1.2 0.1 0 -0 0</pose>
+      <pose>0 1 0.1 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <plane>
               <normal>0 -1 0</normal>
-              <size>2.4 0.2</size>
+              <size>2 0.2</size>
             </plane>
           </geometry>
           <surface>
@@ -347,13 +347,13 @@
     </model>
     <model name='wall3'>
       <static>true</static>
-      <pose>1.2 0 0.1 0 -0 0</pose>
+      <pose>1 0 0.1 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <plane>
               <normal>-1 0 0</normal>
-              <size>0.2 2.4</size>
+              <size>0.2 2</size>
             </plane>
           </geometry>
           <surface>
@@ -383,13 +383,13 @@
     </model>
     <model name='wall4'>
       <static>true</static>
-      <pose>-1.2 0 0.1 0 -0 0</pose>
+      <pose>-1 0 0.1 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <plane>
               <normal>1 0 0</normal>
-              <size>0.2 2.4</size>
+              <size>0.2 2</size>
             </plane>
           </geometry>
           <surface>
@@ -418,34 +418,39 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/airplane/3b41c0837f22555871d03b466c72ce41</uri>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/sofa/e76457b55a3c041cfe49db72b6ffb2c9</uri>
       <name>model1</name>
-      <pose>-0.562108 0.270953 0.062418 1.58291 2e-06 -1.68186</pose>
+      <pose>0.046338 -0.003662 0.192252 1.57079 -2e-06 -0.595409</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/table/685b5890e66bd010dcba2d9cc78a3a32</uri>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/birdhouse/6918606915c91f0ec5c86021644af7b5</uri>
       <name>model2</name>
-      <pose>-0.249601 -0.26421 0.179081 1.5708 -0 1.87713</pose>
+      <pose>0.409671 -0.849621 0.090248 -0.644557 -0 2.43894</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/camera/3175f1c1d0cca3c6901887a0237c0ac2</uri>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/car/402d1624e1c28422383a5be3771c595c</uri>
       <name>model3</name>
-      <pose>-0.108726 -0.497664 0.428642 1.57095 -8.1e-05 2.88588</pose>
+      <pose>0.649217 0.726462 0.112512 -1.30073 2e-06 2.2545</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/car/2236a1b9cde71eff13d31c5a107f3c4</uri>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/table/8010b1ce4e4b1a472a82acb89c31cb53</uri>
       <name>model4</name>
-      <pose>0.17022 -0.427749 0.14003 -1.47672 0.555386 0.210659</pose>
+      <pose>-0.135984 0.66508 0.105787 1.43284 0.006796 0.402219</pose>
+    </include>
+    <include>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/sofa/93b421c66ff4529f37b2bb75885cfc44</uri>
+      <name>model5</name>
+      <pose>-0.115673 -0.288123 0.326363 1.78434 -0.621318 0.618792</pose>
     </include>
     <include>
       <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/camera/4cd861035c740db5a33f3afcb8763f26</uri>
-      <name>model5</name>
-      <pose>-0.337455 0.791367 0.116692 -1.60178 0.988263 0.240172</pose>
+      <name>model6</name>
+      <pose>-0.087924 -0.834489 0.094311 -1.613 -0.963268 -1.56089</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/birdhouse/4fdd9afdb1b0785c74b7a6c82ccb98ba</uri>
-      <name>model6</name>
-      <pose>0.602494 0.55924 0.167496 1.5708 1.42639 1.95004</pose>
+      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/airplane/fabe8fdc617e3aca2bd098b9203af</uri>
+      <name>model7</name>
+      <pose>-0.546008 0.249471 0.129763 1.3549 -0.451041 0.236625</pose>
     </include>
     <light name='sun' type='directional'>
       <pose>0 0 20 0 -0 0</pose>
