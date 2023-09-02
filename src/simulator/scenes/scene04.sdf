@@ -418,42 +418,42 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/airplane/f144e93fe2a11c1f4c3a35cee92bb95b</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/airplane/f144e93fe2a11c1f4c3a35cee92bb95b</uri>
       <name>model1</name>
       <pose>0.486361 0.096408 0.06676 1.5435 0.075815 2.54008</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/airplane/56ba815f883279b462b600da24e0965</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/airplane/56ba815f883279b462b600da24e0965</uri>
       <name>model2</name>
       <pose>-0.180654 -0.370803 0.069196 -1.42391 0.192126 -2.62956</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/table/20b8c6959784f2da83b763ebf4ad2b38</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/table/20b8c6959784f2da83b763ebf4ad2b38</uri>
       <name>model3</name>
       <pose>-0.481451 0.283403 0.149435 1.5708 1e-06 2.06403</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/table/3f4cb895d754dbd3ce47b13319293999</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/table/3f4cb895d754dbd3ce47b13319293999</uri>
       <name>model4</name>
       <pose>0.003788 0.009292 0.269823 1.5708 0.369411 -2.34997</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/birdhouse/4abad12b5ed565da7720fd193c09c4db</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/birdhouse/4abad12b5ed565da7720fd193c09c4db</uri>
       <name>model5</name>
       <pose>0.626443 0.700838 0.117575 0 0 -1.44926</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/table/1a96d308eef57195efaa61516f88b67</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/table/1a96d308eef57195efaa61516f88b67</uri>
       <name>model6</name>
       <pose>0.185835 0.544477 0.322448 3.14159 0.424737 2.25147</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/birdhouse/2293faef03d23ceecc1908493f380315</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/birdhouse/2293faef03d23ceecc1908493f380315</uri>
       <name>model7</name>
       <pose>0.460519 -0.493229 0.155586 2.85901 0 0.077579</pose>
     </include>
     <include>
-      <uri>file:///home/penguin3/liren-repo/shapenet_simulator/src/simulator/models/sofa/1d878962087fbab2350c104b3ba8ddb</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/sofa/1d878962087fbab2350c104b3ba8ddb</uri>
       <name>model8</name>
       <pose>-0.301902 -0.738228 0.174662 -3.10332 -0.248055 0.623821</pose>
     </include>
