@@ -219,11 +219,11 @@
         <sensor name="rgbd_camera" type="rgbd_camera">
           <topic>rgbd</topic>
           <camera>
-            <horizontal_fov>1.2</horizontal_fov>
-            <vertical_fov>0.9</vertical_fov>
+            <horizontal_fov>1.0</horizontal_fov>
+            <vertical_fov>1.0</vertical_fov>
             <image>
-              <width>480</width>
-              <height>360</height>
+              <width>400</width>
+              <height>400</height>
             </image>
             <clip>
               <near>0.1</near>
@@ -231,10 +231,10 @@
             </clip>
             <lens>
               <intrinsics>
-                <fx>350.8070272987445</fx>
-                <fy>372.6283250342182</fy>
-                <cx>240.0</cx>
-                <cy>180.0</cy>
+                <fx>366.0975443424904</fx>
+                <fy>366.0975443424904</fy>
+                <cx>200.0</cx>
+                <cy>200.0</cy>
                 <s>0</s>
               </intrinsics>
             </lens>
@@ -248,11 +248,11 @@
           <topic>semantic</topic>
           <camera>
             <segmentation_type>semantic</segmentation_type>
-            <horizontal_fov>1.2</horizontal_fov>
-            <vertical_fov>0.9</vertical_fov>
+            <horizontal_fov>1.0</horizontal_fov>
+            <vertical_fov>1.0</vertical_fov>
             <image>
-              <width>480</width>
-              <height>360</height>
+              <width>400</width>
+              <height>400</height>
             </image>
             <clip>
               <near>0.1</near>
