@@ -229,6 +229,15 @@
               <near>0.1</near>
               <far>20</far>
             </clip>
+            <lens>
+              <intrinsics>
+                <fx>350.8070272987445</fx>
+                <fy>372.6283250342182</fy>
+                <cx>240.0</cx>
+                <cy>180.0</cy>
+                <s>0</s>
+              </intrinsics>
+            </lens>
           </camera>
           <always_on>1</always_on>
           <update_rate>20</update_rate>
@@ -287,13 +296,13 @@
 
     <model name="wall1">
       <static>true</static>
-      <pose>0 -1 0.1 0 0.0 0</pose>
+      <pose>0 -1.2 0.1 0 0.0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <plane>
               <normal>0 1 0</normal>
-              <size>2 0.2</size>
+              <size>2.4 0.2</size>
             </plane>
           </geometry>
         </collision>
@@ -302,13 +311,13 @@
 
     <model name="wall2">
       <static>true</static>
-      <pose>0 1.0 0.1 0 0.0 0</pose>
+      <pose>0 1.2 0.1 0 0.0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <plane>
               <normal>0 -1 0</normal>
-              <size>2 0.2</size>
+              <size>2.4 0.2</size>
             </plane>
           </geometry>
         </collision>
@@ -317,13 +326,13 @@
 
     <model name="wall3">
       <static>true</static>
-      <pose>1 0 0.1 0 0.0 0</pose>
+      <pose>1.2 0 0.1 0 0.0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <plane>
               <normal>-1 0 0</normal>
-              <size>0.2 2 </size>
+              <size>0.2 2.4 </size>
             </plane>
           </geometry>
         </collision>
@@ -332,13 +341,13 @@
 
     <model name="wall4">
       <static>true</static>
-      <pose>-1 0 0.1 0 0.0 0</pose>
+      <pose>-1.2 0 0.1 0 0.0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <plane>
               <normal>1 0 0</normal>
-              <size>0.2 2</size>
+              <size>0.2 2.4</size>
             </plane>
           </geometry>
         </collision>

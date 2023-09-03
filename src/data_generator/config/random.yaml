@@ -8,7 +8,7 @@ simulation_bridge:
   rgb_noise: 0 # std of rgb measurment
   depth_noise: 0 # std of rgb measurment
 
-scene_range: [0.1, 4]
+scene_range: [0.3, 3.3]
 view_change: 1.5
 num_candidates: 50
 initial_type: random

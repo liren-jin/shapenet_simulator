@@ -179,6 +179,16 @@
               <near>0.10000000000000001</near>
               <far>20</far>
             </clip>
+
+            <lens>
+              <intrinsics>
+                <fx>350.8070272987445</fx>
+                <fy>372.6283250342182</fy>
+                <cx>240.0</cx>
+                <cy>180.0</cy>
+                <s>0</s>
+              </intrinsics>
+            </lens>
             <vertical_fov>0.9</vertical_fov>
           </camera>
           <always_on>true</always_on>

@@ -156,8 +156,6 @@ def focal_len_to_fov(focal, resolution):
 
     return 2 * np.arctan(0.5 * resolution / focal)
 
-    return masked_rgb
-
 
 def record_meta_data(path, camera_info, trajectory):
     resolution = camera_info["image_resolution"]

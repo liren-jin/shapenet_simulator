@@ -229,6 +229,15 @@ SCENE_SDF_TEMPLATE = """
               <near>0.1</near>
               <far>20</far>
             </clip>
+            <lens>
+              <intrinsics>
+                <fx>{focal[0]}</fx>
+                <fy>{focal[1]}</fy>
+                <cx>{c[0]}</cx>
+                <cy>{c[1]}</cy>
+                <s>0</s>
+              </intrinsics>
+            </lens>
           </camera>
           <always_on>1</always_on>
           <update_rate>{update_rate}</update_rate>
