@@ -124,18 +124,19 @@ def uniform_sampling(radius, phi_min):
     """
 
     xyz = np.array([0.0, 0.0, 0.0])
+    view = [0, 0]
 
-    # avoid numerical error
-    while np.linalg.norm(xyz) < 0.001:
+    # avoid numerical error and minimal height requirement
+    while np.linalg.norm(xyz) < 0.001 or view[0] < phi_min:
         xyz[0] = np.random.uniform(low=-1.0, high=1.0)
         xyz[1] = np.random.uniform(low=-1.0, high=1.0)
         xyz[2] = np.random.uniform(low=0.0, high=1.0)
 
-    xyz = radius * xyz / np.linalg.norm(xyz)
-    view = xyz_to_view(xyz, radius)
+        xyz = radius * xyz / np.linalg.norm(xyz)
+        view = xyz_to_view(xyz, radius)
 
-    if view[0] < phi_min:
-        view[0] = phi_min
+    # if view[0] < phi_min:
+    #     view[0] = phi_min
     return view
 
 
