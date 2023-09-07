@@ -296,13 +296,13 @@ SCENE_SDF_TEMPLATE = """
 
     <model name="wall1">
       <static>true</static>
-      <pose>0 -1.2 0.1 0 0.0 0</pose>
+      <pose>0 -1.0 0.2 0 0.0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <plane>
               <normal>0 1 0</normal>
-              <size>2.4 0.2</size>
+              <size>2.0 0.4</size>
             </plane>
           </geometry>
         </collision>
@@ -311,13 +311,13 @@ SCENE_SDF_TEMPLATE = """
 
     <model name="wall2">
       <static>true</static>
-      <pose>0 1.2 0.1 0 0.0 0</pose>
+      <pose>0 1.0 0.2 0 0.0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <plane>
               <normal>0 -1 0</normal>
-              <size>2.4 0.2</size>
+              <size>2.0 0.4</size>
             </plane>
           </geometry>
         </collision>
@@ -326,13 +326,13 @@ SCENE_SDF_TEMPLATE = """
 
     <model name="wall3">
       <static>true</static>
-      <pose>1.2 0 0.1 0 0.0 0</pose>
+      <pose>1.0 0 0.2 0 0.0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <plane>
               <normal>-1 0 0</normal>
-              <size>0.2 2.4 </size>
+              <size>0.4 2.0 </size>
             </plane>
           </geometry>
         </collision>
@@ -341,13 +341,13 @@ SCENE_SDF_TEMPLATE = """
 
     <model name="wall4">
       <static>true</static>
-      <pose>-1.2 0 0.1 0 0.0 0</pose>
+      <pose>-1.0 0 0.2 0 0.0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <plane>
               <normal>1 0 0</normal>
-              <size>0.2 2.4</size>
+              <size>0.4 2.0</size>
             </plane>
           </geometry>
         </collision>

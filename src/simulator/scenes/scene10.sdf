@@ -131,7 +131,7 @@
     <atmosphere type='adiabatic'/>
     <model name='camera'>
       <static>true</static>
-      <pose>0.399986 0 2.16333 -0 1.38797 3.14159</pose>
+      <pose>2 0 1 0 -0 3.14</pose>
       <link name='link'>
         <pose>0 0 0 0 -0 0</pose>
         <inertial>
@@ -167,52 +167,82 @@
             </box>
           </geometry>
         </visual>
-        <sensor name="rgbd_camera" type="rgbd_camera">
+        <sensor name='rgbd_camera' type='rgbd_camera'>
           <topic>rgbd</topic>
           <camera>
-            <horizontal_fov>1.0</horizontal_fov>
-            <vertical_fov>1.0</vertical_fov>
+            <horizontal_fov>1.3</horizontal_fov>
             <image>
               <width>400</width>
               <height>400</height>
             </image>
             <clip>
-              <near>0.1</near>
+              <near>0.10000000000000001</near>
               <far>20</far>
             </clip>
             <lens>
               <intrinsics>
-                <fx>366.0975443424904</fx>
-                <fy>366.0975443424904</fy>
-                <cx>200.0</cx>
-                <cy>200.0</cy>
+                <fx>263.08713844318532</fx>
+                <fy>263.08713844318532</fy>
+                <cx>200</cx>
+                <cy>200</cy>
                 <s>0</s>
               </intrinsics>
+              <type>stereographic</type>
+              <scale_to_hfov>true</scale_to_hfov>
             </lens>
+            <vertical_fov>1.3</vertical_fov>
           </camera>
-          <always_on>1</always_on>
+          <always_on>true</always_on>
           <update_rate>20</update_rate>
           <visualize>true</visualize>
         </sensor>
-
-        <sensor name="semantic_segmentation_camera" type="segmentation">
+        <sensor name='semantic_segmentation_camera' type='segmentation_camera'>
+          <pose>0 0 0 0 -0 0</pose>
           <topic>semantic</topic>
-          <camera>
-            <segmentation_type>semantic</segmentation_type>
-            <horizontal_fov>1.0</horizontal_fov>
-            <vertical_fov>1.0</vertical_fov>
+          <update_rate>20</update_rate>
+          <enable_metrics>false</enable_metrics>
+          <camera name='__default__'>
+            <pose>0 0 0 0 -0 0</pose>
+            <horizontal_fov>1.3</horizontal_fov>
             <image>
               <width>400</width>
               <height>400</height>
+              <format>RGB_INT8</format>
+              <anti_aliasing>4</anti_aliasing>
             </image>
+            <camera_info_topic>__default__</camera_info_topic>
+            <trigger_topic></trigger_topic>
+            <triggered>false</triggered>
             <clip>
-              <near>0.1</near>
+              <near>0.10000000000000001</near>
               <far>20</far>
             </clip>
+            <save enabled='false'>
+              <path>__default__</path>
+            </save>
+            <visibility_mask>4294967295</visibility_mask>
+            <noise>
+              <type>none</type>
+              <mean>0</mean>
+              <stddev>0</stddev>
+            </noise>
+            <distortion>
+              <k1>0</k1>
+              <k2>0</k2>
+              <k3>0</k3>
+              <p1>0</p1>
+              <p2>0</p2>
+              <center>0.5 0.5</center>
+            </distortion>
+            <lens>
+              <type>stereographic</type>
+              <scale_to_hfov>true</scale_to_hfov>
+              <cutoff_angle>1.5708</cutoff_angle>
+              <env_texture_size>256</env_texture_size>
+            </lens>
+            <segmentation_type>semantic</segmentation_type>
+            <optical_frame_id></optical_frame_id>
           </camera>
-          <always_on>1</always_on>
-          <update_rate>20</update_rate>
-          <visualize>true</visualize>
         </sensor>
         <enable_wind>false</enable_wind>
       </link>
@@ -256,13 +286,13 @@
     </model>
     <model name='wall1'>
       <static>true</static>
-      <pose>0 -1 0.1 0 -0 0</pose>
+      <pose>0 -1 0.2 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <plane>
               <normal>0 1 0</normal>
-              <size>2 0.2</size>
+              <size>2 0.4</size>
             </plane>
           </geometry>
           <surface>
@@ -292,13 +322,13 @@
     </model>
     <model name='wall2'>
       <static>true</static>
-      <pose>0 1 0.1 0 -0 0</pose>
+      <pose>0 1 0.2 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <plane>
               <normal>0 -1 0</normal>
-              <size>2 0.2</size>
+              <size>2 0.4</size>
             </plane>
           </geometry>
           <surface>
@@ -328,13 +358,13 @@
     </model>
     <model name='wall3'>
       <static>true</static>
-      <pose>1 0 0.1 0 -0 0</pose>
+      <pose>1 0 0.2 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <plane>
               <normal>-1 0 0</normal>
-              <size>0.2 2</size>
+              <size>0.4 2</size>
             </plane>
           </geometry>
           <surface>
@@ -364,13 +394,13 @@
     </model>
     <model name='wall4'>
       <static>true</static>
-      <pose>-1 0 0.1 0 -0 0</pose>
+      <pose>-1 0 0.2 0 -0 0</pose>
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <plane>
               <normal>1 0 0</normal>
-              <size>0.2 2</size>
+              <size>0.4 2</size>
             </plane>
           </geometry>
           <surface>
@@ -399,44 +429,34 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/airplane/596c6e1e27b102aedf9d17a71b5ddec2</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/car/c18c78cf54b60f078e62780ddf14e62c</uri>
       <name>model1</name>
-      <pose>0.358122 -0.124085 0.068653 1.57079 1e-06 2.02217</pose>
+      <pose>-0.178316 -0.153756 0.06803 1.57412 0 1.84174</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/sofa/5cf46a99a9dfdc07411e8b42940aba04</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/airplane/8c11ef88dd944d00fca1f1143bb6bc17</uri>
       <name>model2</name>
-      <pose>-0.561418 0.503674 0.069794 -1.00261 -0.015065 -2.23869</pose>
+      <pose>-0.060276 0.438221 0.072529 1.75896 7.1e-05 -2.42157</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/birdhouse/2e81196fa81cc1fba29538f582b2005</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/table/c2f870eebd0ac7494719088c8e42c6ab</uri>
       <name>model3</name>
-      <pose>0.575023 -0.60825 0.176955 1.57081 1.41358 -0.123902</pose>
+      <pose>0.0682 0.094273 0.328213 1.64891 -0.074464 -1.99994</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/chair/bbab666132885a14ea96899baeb81e22</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/sofa/b67232c18d00fca7593ebeeedbff73b</uri>
       <name>model4</name>
-      <pose>-0.596862 -0.09798 0.18417 -1.57089 1.57047 -0.291269</pose>
+      <pose>-0.645208 -0.67124 0.179522 -1.36967 -0 0.072934</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/birdhouse/7a2642b37028b462d39f9e7f9f528702</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/car/2236a1b9cde71eff13d31c5a107f3c4</uri>
       <name>model5</name>
-      <pose>0.221713 -0.623332 0.217691 1.5708 -3e-06 -1.21752</pose>
+      <pose>0.713967 -0.372779 0.112253 -1.51442 -0.03036 -2.94165</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/sofa/145bd097a4b1cb8a44db04bfb021976e</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/camera/82819e1201d2dc583a3e53900c6cbba</uri>
       <name>model6</name>
-      <pose>-0.058436 0.038137 0.272084 1.56995 -0.232638 -0.570836</pose>
-    </include>
-    <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/camera/cda4fc24b2a602b5b5328fde615e4a0c</uri>
-      <name>model7</name>
-      <pose>-0.612161 -0.595569 0.233849 -3.14159 1.26135 -0.824794</pose>
-    </include>
-    <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/airplane/1b7ac690067010e26b7bd17e458d0dcb</uri>
-      <name>model8</name>
-      <pose>-0.141506 -0.02867 0.429252 1.64146 0.22843 -3.12087</pose>
+      <pose>0.399273 -0.471693 0.130917 -1.5708 0.004149 1.52228</pose>
     </include>
     <light name='sun' type='directional'>
       <pose>0 0 20 0 -0 0</pose>
