@@ -70,7 +70,7 @@ make
 make enter
 ign gazebo -r <scene_name>.sdf
 ```
-You should see the same world you saved. 
+You should see the same world you saved. If you want to run the simulator in a headless mode, use `ign gazebo -r -s headless-rendering <scene_name>.sdf` instead.
 
 ## Models
 Shapenet model can be download from [here](https://shapenet.org/download/shapenetcore).
