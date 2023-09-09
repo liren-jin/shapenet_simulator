@@ -429,39 +429,39 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/camera/a3c9dcaada9e04d09061da204e7c463c</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/airplane/3b41c0837f22555871d03b466c72ce41</uri>
       <name>model1</name>
-      <pose>-0.224729 -0.654564 0.176561 1.56763 0.000113 -0.631394</pose>
+      <pose>-0.139042 -0.065625 0.062418 1.58291 -0 -0.146084</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/table/20b8c6959784f2da83b763ebf4ad2b38</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/chair/e3e76d624f1f855bcc8a9c365968620</uri>
       <name>model2</name>
-      <pose>0.022616 0.258253 0.149435 1.5708 -0 -2.55013</pose>
+      <pose>0.410315 -0.467036 0.136339 2.93021 -0 1.00806</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/chair/c9d5ff677600b0a1a01ae992b62200ab</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/airplane/3c7e4628a9ea201bbf3143b1cb6076a</uri>
       <name>model3</name>
-      <pose>-0.266275 -0.08403 0.25205 2.09501 1e-06 0.538664</pose>
+      <pose>0.24377 0.919686 0.23047 -0.166706 0.84262 3.03043</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/birdhouse/42e9aff6647766ed265d1076b4b6c5c</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/chair/813f84c21a081253c02e349cb722a77a</uri>
       <name>model4</name>
-      <pose>-0.660492 -0.10179 0.22661 -0.912167 -0.32303 1.96331</pose>
+      <pose>-0.754683 -0.445112 0.146023 3.10551 0.628007 3.12247</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/car/d4512a374073ae95199f3841b86452c3</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/sofa/1b0432fd7b56f7e219fb4103277a6b93</uri>
       <name>model5</name>
-      <pose>0.770447 -0.292154 0.095339 1.56997 0.001301 -2.73311</pose>
+      <pose>0.544882 0.741345 0.123106 3.13864 -0 0.354797</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/table/8e3bfa092e83c28d55f46d55537192b6</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/airplane/8c11ef88dd944d00fca1f1143bb6bc17</uri>
       <name>model6</name>
-      <pose>0.656011 -0.581715 0.205581 -1.22525 0.330911 -1.1152</pose>
+      <pose>0.129169 0.268784 0.092821 1.66844 0.224823 0.458897</pose>
     </include>
     <include>
-      <uri>file:///shapenet_simulator/src/simulator/models/chair/c9d5ff677600b0a1a01ae992b62200ab</uri>
+      <uri>file:///shapenet_simulator/src/simulator/models/sofa/d5931526b56b157cab610b0c94236463</uri>
       <name>model7</name>
-      <pose>0.493232 0.667411 0.170935 -0.345057 1.5708 -0.714834</pose>
+      <pose>0.720029 -0.072328 0.210377 1.57087 -2.5e-05 -1.41793</pose>
     </include>
     <light name='sun' type='directional'>
       <pose>0 0 20 0 -0 0</pose>

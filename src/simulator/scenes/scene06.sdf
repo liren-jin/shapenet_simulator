@@ -443,11 +443,11 @@
       <name>model3</name>
       <pose>0.276983 0.581763 0.177037 -3.14116 0.363436 -1.96282</pose>
     </include>
-    <include>
+    <!--include>
       <uri>file:///shapenet_simulator/src/simulator/models/table/20b8c6959784f2da83b763ebf4ad2b38</uri>
       <name>model4</name>
       <pose>-0.314212 0.442251 0.241752 0 -2e-06 2.23364</pose>
-    </include>
+    </include-->
     <include>
       <uri>file:///shapenet_simulator/src/simulator/models/airplane/2d43c1430df8194ace5721ccacba16</uri>
       <name>model5</name>

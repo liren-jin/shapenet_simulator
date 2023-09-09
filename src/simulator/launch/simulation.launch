@@ -10,7 +10,7 @@
     type="create"
     name= "model1"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/sofa/fce717669ca521884e1a9fae5403e01f/model.sdf -name model1 -order 1 -x -0.5495387071800014 -y -0.11276330239539677 -z 3.0 -Y -0.1729950699858005 -P -0.1775507111498111 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/table/1a96d308eef57195efaa61516f88b67/model.sdf -name model1 -order 1 -x -0.005750879729958699 -y -0.010661464868623537 -z 3.0 -Y 2.1139366267498496 -P 0.09802994723820307 -R 1.570756">
   </node>
 
   <node
@@ -18,7 +18,7 @@
     type="create"
     name= "model2"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/chair/813f84c21a081253c02e349cb722a77a/model.sdf -name model2 -order 2 -x 0.23938443651156588 -y -0.5411458321985996 -z 3.0 -Y -3.033411044145591 -P -0.18790154845128654 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/camera/509017601d92a7d1db286a46dfc37518/model.sdf -name model2 -order 2 -x -0.5586386190118748 -y 0.16506431963349366 -z 3.0 -Y 2.2906021306154662 -P -0.05570705476407661 -R 1.570756">
   </node>
 
   <node
@@ -26,7 +26,7 @@
     type="create"
     name= "model3"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/camera/a3c9dcaada9e04d09061da204e7c463c/model.sdf -name model3 -order 3 -x 0.5812074908094594 -y -0.36626860255899873 -z 3.0 -Y 2.2209947925087907 -P 0.06619629335993904 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/sofa/611f5a21a6f9ad3d7635d2483a62c61e/model.sdf -name model3 -order 3 -x -0.15859581883460094 -y 0.060979185962610066 -z 3.0 -Y -0.11700901700606714 -P -0.19387534843644408 -R 1.570756">
   </node>
 
   <node
@@ -34,7 +34,7 @@
     type="create"
     name= "model4"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/chair/40ab45735f526717e25492f5f62d416f/model.sdf -name model4 -order 4 -x -0.6553513537114334 -y 0.22708954812300083 -z 3.0 -Y 2.782981950128137 -P -0.010799349768565947 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/airplane/fabe8fdc617e3aca2bd098b9203af/model.sdf -name model4 -order 4 -x -0.034571572205722274 -y 0.18637686099587294 -z 3.0 -Y 1.0447349555688894 -P -0.08341007332994194 -R 1.570756">
   </node>
 
   <node
@@ -42,7 +42,7 @@
     type="create"
     name= "model5"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/birdhouse/7bf5608a4d2c66bac5c86021644af7b5/model.sdf -name model5 -order 5 -x 0.06569997018501193 -y -0.01990548863258304 -z 3.0 -Y 0.26179828482910716 -P -0.03910698270832369 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/chair/6e92bdda1bca7b72f9a4f3015fbf70/model.sdf -name model5 -order 5 -x 0.4341803265987372 -y 0.3706298504544871 -z 3.0 -Y -2.5558923791521697 -P -0.10313367902079414 -R 1.570756">
   </node>
 
   <node
@@ -50,7 +50,7 @@
     type="create"
     name= "model6"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/sofa/b67232c18d00fca7593ebeeedbff73b/model.sdf -name model6 -order 6 -x 0.004876943378699726 -y 0.2629300809731523 -z 3.0 -Y 1.444583970091068 -P -0.19384325706546784 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/camera/f1540b3d6da38fbf1d908355fc20d631/model.sdf -name model6 -order 6 -x -0.27143088939078885 -y 0.294934454567 -z 3.0 -Y -0.9676915709594378 -P -0.1771914531368135 -R 1.570756">
   </node>
 
   <node
@@ -58,7 +58,7 @@
     type="create"
     name= "model7"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/airplane/2d43c1430df8194ace5721ccacba16/model.sdf -name model7 -order 7 -x 0.17840219998057213 -y 0.14870641768495169 -z 3.0 -Y -2.6527312445293454 -P -0.0484705672794003 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/airplane/351e24a503c49840cc0472b5df09bf08/model.sdf -name model7 -order 7 -x -0.06700627258156468 -y -0.025431066929200528 -z 3.0 -Y 1.6317040407000785 -P -0.09571279392943155 -R 1.570756">
   </node>
 
 </launch>

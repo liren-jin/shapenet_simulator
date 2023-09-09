@@ -431,37 +431,37 @@
     <include>
       <uri>file:///shapenet_simulator/src/simulator/models/sofa/d5931526b56b157cab610b0c94236463</uri>
       <name>model1</name>
-      <pose>0.105667 0.504169 0.210492 1.5708 0 0.185706</pose>
+      <pose>0.105667 0.50417 0.210492 1.57079 -0 0.185706</pose>
     </include>
     <include>
       <uri>file:///shapenet_simulator/src/simulator/models/table/fc7ec69f0402424de27790b0ec8671f7</uri>
       <name>model2</name>
-      <pose>-0.645012 -0.040345 0.181011 1.5708 -1.33405 -0.550117</pose>
+      <pose>-0.645012 -0.040345 0.181011 1.5708 -1.33405 -0.550115</pose>
     </include>
     <include>
       <uri>file:///shapenet_simulator/src/simulator/models/table/685b5890e66bd010dcba2d9cc78a3a32</uri>
       <name>model3</name>
-      <pose>0.014371 -0.087909 0.102228 -1.5708 0 0.858155</pose>
+      <pose>0.014371 -0.087909 0.178801 1.5708 -0 -0</pose>
     </include>
     <include>
       <uri>file:///shapenet_simulator/src/simulator/models/camera/97690c4db20227d248e23e2c398d8046</uri>
       <name>model4</name>
-      <pose>0.628102 0.234987 0.276057 -3.14159 -0 -1.70034</pose>
+      <pose>0.628103 0.234987 0.276049 -3.14159 -0 -1.70034</pose>
     </include>
     <include>
       <uri>file:///shapenet_simulator/src/simulator/models/car/402d1624e1c28422383a5be3771c595c</uri>
       <name>model5</name>
-      <pose>-0.427448 -0.76632 0.113129 -1.71114 1e-06 -1.21064</pose>
+      <pose>-0.427448 -0.76632 0.113129 -1.71114 0 -1.21064</pose>
     </include>
     <include>
       <uri>file:///shapenet_simulator/src/simulator/models/table/685b5890e66bd010dcba2d9cc78a3a32</uri>
       <name>model6</name>
-      <pose>0.507595 -0.469598 0.17908 1.5708 -2e-06 0.144066</pose>
+      <pose>0.507595 -0.469597 0.179081 1.5708 -0 0.144066</pose>
     </include>
     <include>
       <uri>file:///shapenet_simulator/src/simulator/models/chair/a2fdf98f85cec8696ca407465d3c74d7</uri>
       <name>model7</name>
-      <pose>-0.440491 0.615485 0.205017 0.084717 1e-06 -0.446778</pose>
+      <pose>-0.440307 0.613921 0.203303 0.076707 0 -0.444869</pose>
     </include>
     <light name='sun' type='directional'>
       <pose>0 0 20 0 -0 0</pose>
