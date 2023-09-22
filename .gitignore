@@ -6,3 +6,4 @@ logs/
 *.png
 *.npy
 **/records
+./vscode
