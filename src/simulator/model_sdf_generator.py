@@ -51,13 +51,13 @@ def main():
             inertia = np.abs(inertia)
 
             if args.random_scale:
-                scale_factor = np.random.uniform(1, 2)
+                scale_factor = np.random.uniform(0.8, 1.2)
                 scale = scale_factor * np.array([1.0, 1.0, 1.0])
             else:
                 scale = args.fix_model_scale * np.array([1.0, 1.0, 1.0])
 
             if category == "airplane":
-                scale = 1.5 * scale
+                scale = 1.3 * scale
 
             model_property = {
                 "label": LABEL[category],
@@ -108,7 +108,7 @@ def parse_args():
     parser.add_argument(
         "--fix_model_scale",
         type=float,
-        default=0.8,
+        default=1.0,
         help="scale of the model",
     )
 

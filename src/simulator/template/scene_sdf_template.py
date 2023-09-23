@@ -294,65 +294,6 @@ SCENE_SDF_TEMPLATE = """
       </link>
     </model>
 
-    <model name="wall1">
-      <static>true</static>
-      <pose>0 -1.0 0.2 0 0.0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <plane>
-              <normal>0 1 0</normal>
-              <size>2.0 0.4</size>
-            </plane>
-          </geometry>
-        </collision>
-      </link>
-    </model>
-
-    <model name="wall2">
-      <static>true</static>
-      <pose>0 1.0 0.2 0 0.0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <plane>
-              <normal>0 -1 0</normal>
-              <size>2.0 0.4</size>
-            </plane>
-          </geometry>
-        </collision>
-      </link>
-    </model>
-
-    <model name="wall3">
-      <static>true</static>
-      <pose>1.0 0 0.2 0 0.0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <plane>
-              <normal>-1 0 0</normal>
-              <size>0.4 2.0 </size>
-            </plane>
-          </geometry>
-        </collision>
-      </link>
-    </model>
-
-    <model name="wall4">
-      <static>true</static>
-      <pose>-1.0 0 0.2 0 0.0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <plane>
-              <normal>1 0 0</normal>
-              <size>0.4 2.0</size>
-            </plane>
-          </geometry>
-        </collision>
-      </link>
-    </model>
     <gravity>0.0 0.0 -15.0</gravity>
   </world>
 </sdf>

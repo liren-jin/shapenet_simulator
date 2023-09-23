@@ -53,7 +53,7 @@ def include_nodes(num, cfg, metadata):
             "label": label,
             "x": x,
             "y": y,
-            "z": 3.0,
+            "z": 1.5,
             "roll": roll,
             "yaw": yaw,
             "pitch": pitch,
