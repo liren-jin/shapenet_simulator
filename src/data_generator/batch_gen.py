@@ -4,16 +4,19 @@ import yaml
 import argparse
 import subprocess
 from path_pattern import get_path
-from tqdm import tqdm
 import time
-import signal
+import glob
 
 
 def main():
     args = parse_args()
-    scene_num = args.scene_num
-    scene_id_list = range(scene_num)
     scene_path = args.scene_path
+
+    print(scene_path)
+    scene_file_list = [
+        x for x in glob.glob(os.path.join(scene_path, "*")) if x.endswith(".sdf")
+    ]
+    print(scene_file_list)
 
     rospy.init_node(args.path_pattern)
 
@@ -28,17 +31,15 @@ def main():
     cmd_bridge = ["roslaunch", "simulator", "ros_bridge.launch"]
     process_bridge = subprocess.Popen(cmd_bridge)
 
-    for i in range(scene_num):
-        scene_id = scene_id_list[i]
-        scene_id = f"{scene_id:03d}"
-        cmd_simulator = (
-            f"ign gazebo -r -s headless-rendering {scene_path}/scene{scene_id}.sdf"
-        )
+    for scene_file in scene_file_list:
+        cmd_simulator = f"ign gazebo -r -s headless-rendering {scene_file}"
 
         process_simulator = subprocess.Popen("exec " + cmd_simulator, shell=True)
-        print("start p1")
+        print("start simulator")
 
         time.sleep(5)
+        scene_id = os.path.split(scene_file)[1].rsplit(".", maxsplit=1)[0]
+        print(scene_id)
         path_cfg["experiment_id"] = scene_id
         path_generator = get_path(path_cfg)
 
@@ -48,9 +49,6 @@ def main():
 
         process_simulator.kill()
         process_simulator.wait()
-        # process_simulator.terminate()
-        # process_simulator.wait()
-        # os.killpg(os.getpgid(process_simulator.pid), signal.SIGTERM)
         time.sleep(5)
 
     process_bridge.terminate()
@@ -71,18 +69,12 @@ def parse_args():
     )
 
     parser.add_argument(
-        "--scene_num",
-        "-S",
-        type=int,
-        required=True,
-        help="number of scenes used",
-    )
-    parser.add_argument(
         "--scene_path",
         type=str,
         required=True,
         help="scene sdf directory path",
     )
+
     # arguments with default values
     parser.add_argument(
         "--record_path",

@@ -19,7 +19,7 @@ LAUNCH_FILE_TEMPLATE = """<?xml version="1.0"?>
     type="create"
     name= "wall"
     output="screen"
-    args="-world scene_base -file $(find simulator)/models/wall/model.sdf -name wall -order 0 -x 0 -y 0 -z 0 -Y 0 -P 0 -R 1.570756">
+    args="-world scene_base -file $(find simulator)/models/wall/model.sdf -name wall -order 0 -x 0 -y 0 -z 0.5 -Y 0 -P 0 -R 1.570756">
   </node>
   
   {node_setup}
