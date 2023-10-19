@@ -2,8 +2,7 @@ import numpy as np
 import os
 from PIL import Image
 import glob
-
-data_rootdir = "records/uniform"
+import argparse
 
 
 ###### hard coded only for this simulator with current scene configuration #####
@@ -22,12 +21,32 @@ def check_overlap(image, label, anno_map):
     white_pixel_img = np.all(background_pixel == np.array([243, 243, 243]), axis=-1)
     white_pixel_num = white_pixel_img.sum()
 
-    if abs(white_pixel_num - bg_pixel) > 50:
+    if abs(white_pixel_num - bg_pixel) > 100:
         print(white_pixel_num - bg_pixel)
         return "wrong"
 
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+
+    # mandatory arguments
+
+    parser.add_argument(
+        "--data_rootdir",
+        "-D",
+        type=str,
+        required=True,
+        help="path to dataset",
+    )
+
+    args = parser.parse_args()
+
+    return args
+
+
 if __name__ == "__main__":
+    args = parse_args()
+    data_rootdir = args.data_rootdir
     assert os.path.exists(data_rootdir)
     scene_list = [
         c

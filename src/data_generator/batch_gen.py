@@ -12,10 +12,10 @@ def main():
     args = parse_args()
     scene_path = args.scene_path
 
-    print(scene_path)
     scene_file_list = [
         x for x in glob.glob(os.path.join(scene_path, "*")) if x.endswith(".sdf")
     ]
+    scene_file_list.sort()
     print(scene_file_list)
 
     rospy.init_node(args.path_pattern)
@@ -30,6 +30,7 @@ def main():
 
     cmd_bridge = ["roslaunch", "simulator", "ros_bridge.launch"]
     process_bridge = subprocess.Popen(cmd_bridge)
+    print("start bridge")
 
     for scene_file in scene_file_list:
         cmd_simulator = f"ign gazebo -r -s headless-rendering {scene_file}"
