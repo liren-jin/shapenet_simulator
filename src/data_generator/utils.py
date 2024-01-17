@@ -99,7 +99,7 @@ LABELS = {
         "sofa": {"color": (255, 0, 0), "id": 4},
         "airplane": {"color": (102, 0, 204), "id": 5},
         "camera": {"color": (0, 102, 0), "id": 6},
-        "birdhouse": {"color": (255, 153, 204), "id": 7},
+        # "birdhouse": {"color": (255, 153, 204), "id": 7},
     }
 }
 

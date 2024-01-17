@@ -1,11 +1,11 @@
 ###### configuration for random_planner ######
 action_space:
-  min_height: 0.1
+  min_height: 0.01
   radius: 2
 simulation_bridge:
   camera_type: rgbd_camera
   rgb_noise: 0 # std of rgb measurment
   depth_noise: 0 # std of rgb measurment
-scene_range: [0.3, 3.3]
+scene_range: [0.1, 4.0]
 initial_type: pre_calculated
 use_opencv: true
