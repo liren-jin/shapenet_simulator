@@ -99,7 +99,6 @@ LABELS = {
         "sofa": {"color": (255, 0, 0), "id": 4},
         "airplane": {"color": (102, 0, 204), "id": 5},
         "camera": {"color": (0, 102, 0), "id": 6},
-        # "birdhouse": {"color": (255, 153, 204), "id": 7},
     }
 }
 
@@ -135,8 +134,6 @@ def uniform_sampling(radius, phi_min):
         xyz = radius * xyz / np.linalg.norm(xyz)
         view = xyz_to_view(xyz, radius)
 
-    # if view[0] < phi_min:
-    #     view[0] = phi_min
     return view
 
 

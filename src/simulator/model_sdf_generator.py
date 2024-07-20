@@ -15,9 +15,6 @@ def main():
     args = parse_args()
     root_dir = os.path.join(os.getcwd(), "models")
 
-    # category_list = [
-    #     c for c in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, c))
-    # ]
     category_list = CATEGPRY
     print("available categories:", category_list)
     metadata = {}
