@@ -3,7 +3,7 @@
 An example of the simulator:
 ![Framework](doc/example.png)
 ## Environmental Setup
-For using the simulator, you need to install [docker](https://docs.docker.com/engine/install/) and [nvidia run time](https://github.com/NVIDIA/nvidia-container-runtime) support.
+For using the simulator, you need to install [docker](https://docs.docker.com/engine/install/) and [nvidia run time](https://github.com/NVIDIA/nvidia-container-toolkit) support.
 
 ```commandline
 git clone git@github.com:liren-jin/shapenet_simulator.git

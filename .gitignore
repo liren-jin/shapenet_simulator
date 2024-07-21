@@ -7,5 +7,5 @@ logs/
 *.npy
 **/records
 ./vscode
-/model
-/scene
+models/
+scenes/
